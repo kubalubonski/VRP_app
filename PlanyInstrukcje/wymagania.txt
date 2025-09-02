@@ -1,0 +1,15 @@
+WYMAGANIA APLIKACJI: Optymalizacja tras przejazdu pojazdów dostawczych
+
+1. Buforowanie wyników zapytań do API:
+- Wszystkie pobrane czasy przejazdu i współrzędne GPS powinny być zapisywane lokalnie (np. w pliku JSON/CSV lub bazie danych).
+- Przy kolejnych uruchomieniach aplikacji należy najpierw sprawdzać, czy dane już istnieją w buforze, zanim zostanie wysłane zapytanie do API.
+- Buforowanie pozwoli ograniczyć liczbę zapytań, przyspieszyć działanie aplikacji i nie przekroczyć limitów API.
+
+2. 2. Realne ograniczenia uwzględniane przez algorytm VRP:
+- Maksymalna pojemność pojazdu (ładowność).
+- Okno czasowe dostawy (przedział godzinowy dla każdego punktu).
+- Ilość towaru do dostarczenia w każdym punkcie.
+- Trasa musi zaczynać się i kończyć w magazynie.
+- Suma ładunków na trasie nie może przekroczyć pojemności pojazdu.
+- Czas przyjazdu do punktu musi mieścić się w oknie czasowym.
+- Uwzględnienie zmodyfikowanych czasów przejazdu (pogoda, ruch drogowy) w macierzy czasów.

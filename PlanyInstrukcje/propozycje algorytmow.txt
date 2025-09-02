@@ -1,0 +1,5 @@
+Algorytm genetyczny (GA): kary są częścią funkcji fitness.
+Algorytm mrówkowy (ACO): kary dodaje się do kosztu trasy, wpływają na wybór ścieżek przez mrówki.
+Tabu Search: kary są dodawane do funkcji celu, rozwiązania naruszające ograniczenia są mniej atrakcyjne.
+Symulowane wyżarzanie
+

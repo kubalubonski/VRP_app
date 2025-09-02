@@ -1,0 +1,60 @@
+[2025-09-01 16:35:48] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:35:49] Eksport danych do CSV: OK
+[2025-09-01 16:35:53] Geokodowanie: OK
+[2025-09-01 16:36:02] Czasy przejazdu: OK
+[2025-09-01 16:36:02] Scenariusze czasowe: OK
+[2025-09-01 16:36:02] [END] Workflow zakończony
+[2025-09-01 16:40:18] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:40:18] Eksport danych do CSV: OK
+[2025-09-01 16:40:22] Geokodowanie: OK
+[2025-09-01 16:40:30] Czasy przejazdu: OK
+[2025-09-01 16:40:30] Scenariusze czasowe: OK
+[2025-09-01 16:40:30] [END] Workflow zakończony
+[2025-09-01 16:40:39] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:40:39] Eksport danych do CSV: OK
+[2025-09-01 16:40:42] Geokodowanie: OK
+[2025-09-01 16:40:54] Czasy przejazdu: OK
+[2025-09-01 16:40:54] Scenariusze czasowe: OK
+[2025-09-01 16:40:54] [END] Workflow zakończony
+[2025-09-01 16:41:55] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:41:55] Eksport danych do CSV: OK
+[2025-09-01 16:41:58] Geokodowanie: OK
+[2025-09-01 16:42:12] Czasy przejazdu: OK
+[2025-09-01 16:42:12] Scenariusze czasowe: OK
+[2025-09-01 16:42:12] [END] Workflow zakończony
+[2025-09-01 16:42:42] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:42:42] Eksport danych do CSV: OK
+[2025-09-01 16:42:52] Geokodowanie: OK
+[2025-09-01 16:44:37] Czasy przejazdu: OK
+[2025-09-01 16:44:37] Scenariusze czasowe: OK
+[2025-09-01 16:44:37] [END] Workflow zakończony
+[2025-09-01 16:48:38] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:48:38] Eksport danych do CSV: OK
+[2025-09-01 16:48:50] Geokodowanie: OK
+[2025-09-01 16:48:51] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:48:51] Eksport danych do CSV: OK
+[2025-09-01 16:48:56] Geokodowanie: OK
+[2025-09-01 16:49:10] Czasy przejazdu: OK
+[2025-09-01 16:49:10] Scenariusze czasowe: OK
+[2025-09-01 16:49:10] [END] Workflow zakończony
+[2025-09-01 16:50:43] Czasy przejazdu: OK
+[2025-09-01 16:50:43] Scenariusze czasowe: OK
+[2025-09-01 16:50:43] [END] Workflow zakończony
+[2025-09-01 16:53:08] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:53:08] Eksport danych do CSV: OK
+[2025-09-01 16:53:14] Geokodowanie: OK
+[2025-09-01 16:53:29] Czasy przejazdu: OK
+[2025-09-01 16:53:29] Scenariusze czasowe: OK
+[2025-09-01 16:53:29] [END] Workflow zakończony
+[2025-09-01 16:59:27] [START] Workflow po eksporcie do CSV
+[2025-09-01 16:59:27] Eksport danych do CSV: OK
+[2025-09-01 16:59:32] Geokodowanie: OK
+[2025-09-01 16:59:46] Czasy przejazdu: OK
+[2025-09-01 16:59:46] Scenariusze czasowe: OK
+[2025-09-01 16:59:46] [END] Workflow zakończony
+[2025-09-01 17:02:33] [START] Workflow po eksporcie do CSV
+[2025-09-01 17:02:33] Eksport danych do CSV: OK
+[2025-09-01 17:02:39] Geokodowanie: OK
+[2025-09-01 17:02:56] Czasy przejazdu: OK
+[2025-09-01 17:02:56] Scenariusze czasowe: OK
+[2025-09-01 17:02:56] [END] Workflow zakończony

@@ -1,0 +1,10 @@
+Dane wymagane od użytkownika (do poprawnego działania algorytmu):
+
+- Adres magazynu startowego.
+- Liczba pojazdów.
+- Pojemność każdego pojazdu (ładowność w kilogramach).
+- Lista punktów dostaw:
+  - Adres każdego punktu dostawy.
+  - Ilość towaru do dostarczenia w każdym punkcie (w kilogramach).
+  - Okno czasowe dostawy (opcjonalnie, jeśli punkt wymaga dostawy w określonych godzinach).
+  - Czas startowy każdego pojazdu

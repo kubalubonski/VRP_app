@@ -1,0 +1,313 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\OptymalizacjaTras.bundle.scp.css",
+      "PackagePath": "staticwebassets\\OptymalizacjaTras.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\config.csv",
+      "PackagePath": "staticwebassets\\config.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\czasy_przejazdu.csv",
+      "PackagePath": "staticwebassets\\czasy_przejazdu.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\czasy_scenariusze.csv",
+      "PackagePath": "staticwebassets\\czasy_scenariusze.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\dane_wejsciowe.csv",
+      "PackagePath": "staticwebassets\\dane_wejsciowe.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\dane_wejsciowe_geocoded.csv",
+      "PackagePath": "staticwebassets\\dane_wejsciowe_geocoded.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\log_aplikacja.txt",
+      "PackagePath": "staticwebassets\\log_aplikacja.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\log_geocode.txt",
+      "PackagePath": "staticwebassets\\log_geocode.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\log_python.txt",
+      "PackagePath": "staticwebassets\\log_python.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\log_route_times.txt",
+      "PackagePath": "staticwebassets\\log_route_times.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\log_scenariusze.txt",
+      "PackagePath": "staticwebassets\\log_scenariusze.txt"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\trasy\\dane_wejsciowe_test.csv",
+      "PackagePath": "staticwebassets\\trasy\\dane_wejsciowe_test.csv"
+    },
+    {
+      "Id": "C:\\Users\\kubal\\Desktop\\Ptaca_Magisterska\\Aplikacja\\OptymalizacjaTras\\wwwroot\\trasy\\trasy_krotkie.csv",
+      "PackagePath": "staticwebassets\\trasy\\trasy_krotkie.csv"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.OptymalizacjaTras.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.OptymalizacjaTras.props",
+      "PackagePath": "build\\OptymalizacjaTras.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.OptymalizacjaTras.props",
+      "PackagePath": "buildMultiTargeting\\OptymalizacjaTras.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.OptymalizacjaTras.props",
+      "PackagePath": "buildTransitive\\OptymalizacjaTras.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

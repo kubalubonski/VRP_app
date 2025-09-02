@@ -1,0 +1,48 @@
+[START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Kasprowicza', 'Numer': '13', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '', 'Lon': ''}
+[INFO] Geokoduję: Kasprowicza 34, Rabka-Zdrój, 34-700
+[OK] Kasprowicza 34, Rabka-Zdrój, 34-700 -> 49.6198237, 19.9616638
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Kasprowicza', 'Numer': '34', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '22:54', 'OknoCzasoweDo': '02:54', 'Lat': '49.6198237', 'Lon': '19.9616638'}
+[INFO] Geokoduję: Sądecka 84, Rabka-Zdrój, 34-700
+[OK] Sądecka 84, Rabka-Zdrój, 34-700 -> 49.6224799, 19.9603920
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Sądecka', 'Numer': '84', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:59', 'OknoCzasoweDo': '00:58', 'Lat': '49.6224799', 'Lon': '19.9603920'}
+[INFO] Geokoduję: Podhalańska 24, Rabka-Zdrój, 34-700
+[OK] Podhalańska 24, Rabka-Zdrój, 34-700 -> 49.6039846, 19.9545890
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Podhalańska', 'Numer': '24', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:55', 'OknoCzasoweDo': '23:13', 'Lat': '49.6039846', 'Lon': '19.9545890'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv
+[START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Kasprowicza', 'Numer': '13', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '', 'Lon': ''}
+[INFO] Geokoduję: Kasprowicza 34, Rabka-Zdrój, 34-700
+[OK] Kasprowicza 34, Rabka-Zdrój, 34-700 -> 49.6198237, 19.9616638
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Kasprowicza', 'Numer': '34', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '22:54', 'OknoCzasoweDo': '02:54', 'Lat': '49.6198237', 'Lon': '19.9616638'}
+[INFO] Geokoduję: Sądecka 84, Rabka-Zdrój, 34-700
+[OK] Sądecka 84, Rabka-Zdrój, 34-700 -> 49.6224799, 19.9603920
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Sądecka', 'Numer': '84', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:59', 'OknoCzasoweDo': '00:58', 'Lat': '49.6224799', 'Lon': '19.9603920'}
+[INFO] Geokoduję: Podhalańska 24, Rabka-Zdrój, 34-700
+[OK] Podhalańska 24, Rabka-Zdrój, 34-700 -> 49.6039846, 19.9545890
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Podhalańska', 'Numer': '24', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:55', 'OknoCzasoweDo': '23:13', 'Lat': '49.6039846', 'Lon': '19.9545890'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv
+[START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '', 'Lon': ''}
+[INFO] Geokoduję: Floriańska 15, Kraków, 31-019
+[OK] Floriańska 15, Kraków, 31-019 -> 50.0627426, 19.9398622
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Geokoduję: Święty Marcin 10, Poznań, 61-803
+[OK] Święty Marcin 10, Poznań, 61-803 -> 52.4060391, 16.9293623
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[INFO] Geokoduję: Piłsudskiego 5, Wrocław, 50-033
+[OK] Piłsudskiego 5, Wrocław, 50-033 -> 51.1063316, 17.0211178
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Piłsudskiego', 'Numer': '5', 'Miasto': 'Wrocław', 'KodPocztowy': '50-033', 'OknoCzasoweOd': '11:00', 'OknoCzasoweDo': '12:00', 'Lat': '51.1063316', 'Lon': '17.0211178'}
+[INFO] Geokoduję: Piotrkowska 85, Łódź, 90-423
+[OK] Piotrkowska 85, Łódź, 90-423 -> 51.7666167, 19.4566331
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Piotrkowska', 'Numer': '85', 'Miasto': 'Łódź', 'KodPocztowy': '90-423', 'OknoCzasoweOd': '13:00', 'OknoCzasoweDo': '14:00', 'Lat': '51.7666167', 'Lon': '19.4566331'}
+[INFO] Geokoduję: Monte Cassino 53, Sopot, 81-759
+[OK] Monte Cassino 53, Sopot, 81-759 -> 54.4443759, 18.5665949
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Monte Cassino', 'Numer': '53', 'Miasto': 'Sopot', 'KodPocztowy': '81-759', 'OknoCzasoweOd': '15:00', 'OknoCzasoweDo': '16:00', 'Lat': '54.4443759', 'Lon': '18.5665949'}
+[INFO] Geokoduję: Staromiejska 13, Katowice, 40-013
+[OK] Staromiejska 13, Katowice, 40-013 -> 50.2583544, 19.0236640
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Staromiejska', 'Numer': '13', 'Miasto': 'Katowice', 'KodPocztowy': '40-013', 'OknoCzasoweOd': '17:00', 'OknoCzasoweDo': '18:00', 'Lat': '50.2583544', 'Lon': '19.0236640'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv

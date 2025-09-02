@@ -1,0 +1,162 @@
+[START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Kasprowicza', 'Numer': '34', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '22:54', 'OknoCzasoweDo': '02:54', 'Lat': '49.6198237', 'Lon': '19.9616638'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Sądecka', 'Numer': '84', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:59', 'OknoCzasoweDo': '00:58', 'Lat': '49.6224799', 'Lon': '19.9603920'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Podhalańska', 'Numer': '24', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:55', 'OknoCzasoweDo': '23:13', 'Lat': '49.6039846', 'Lon': '19.9545890'}
+[INFO] Utworzono 6 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 49.6198237,19.9616638 -> 49.6224799,19.9603920
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 49.6198237,19.9616638 -> 49.6039846,19.9545890
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 49.6224799,19.9603920 -> 49.6198237,19.9616638
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 49.6224799,19.9603920 -> 49.6039846,19.9545890
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 49.6039846,19.9545890 -> 49.6198237,19.9616638
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 49.6039846,19.9545890 -> 49.6224799,19.9603920
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[INFO] Zapisano parę: 2->1
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv
+[START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Kasprowicza', 'Numer': '34', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '22:54', 'OknoCzasoweDo': '02:54', 'Lat': '49.6198237', 'Lon': '19.9616638'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Sądecka', 'Numer': '84', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:59', 'OknoCzasoweDo': '00:58', 'Lat': '49.6224799', 'Lon': '19.9603920'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Podhalańska', 'Numer': '24', 'Miasto': 'Rabka-Zdrój', 'KodPocztowy': '34-700', 'OknoCzasoweOd': '00:55', 'OknoCzasoweDo': '23:13', 'Lat': '49.6039846', 'Lon': '19.9545890'}
+[INFO] Utworzono 6 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 49.6198237,19.9616638 -> 49.6224799,19.9603920
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.95158, 49.61378, 19.961418, 49.622387], 'routes': [{'summary': {'distance': 2279.9, 'duration': 386.7}, 'segments': [{'distance': 2279.9, 'duration': 386.7, 'steps': [{'distance': 591.0, 'duration': 129.0, 'type': 11, 'instruction': 'Head northwest on Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [0, 18]}, {'distance': 450.3, 'duration': 96.6, 'type': 5, 'instruction': 'Turn slight right onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [18, 36]}, {'distance': 994.2, 'duration': 127.0, 'type': 3, 'instruction': 'Turn sharp right onto Sądecka', 'name': 'Sądecka', 'way_points': [36, 61]}, {'distance': 205.7, 'duration': 24.8, 'type': 7, 'instruction': 'Enter the roundabout and take the 1st exit onto Sądecka, 28', 'name': 'Sądecka, 28', 'exit_number': 1, 'way_points': [61, 75]}, {'distance': 38.7, 'duration': 9.3, 'type': 0, 'instruction': 'Turn left', 'name': '-', 'way_points': [75, 77]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at your destination, on the right', 'name': '-', 'way_points': [77, 77]}]}], 'bbox': [19.95158, 49.61378, 19.961418, 49.622387], 'geometry': 'cjzmH{uyxBY`@EN?L?FHVx@vAdCtElAhF@Fd@zAtAnFhA~BLJNBfAKb@FLHNLZ|APz@JNNJvEhBJJVZxAbBPJR?DXTd@DJBFHZx@~CF`@?TOEI@qB^{@PaAPa@?a@S]S}A}@yA}@uCeBiBiAy@y@U]a@m@W_@qDiFwAwBOSeA}Aq@aA{@kAuAwAGE]c@GSAs@EUAWKw@EQEQMs@UiAUkAACAGOu@Mq@q@h@IH', 'way_points': [0, 77]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733426413, 'query': {'coordinates': [[19.9616638, 49.6198237], [19.960392, 49.6224799]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 49.6198237,19.9616638 -> 49.6039846,19.9545890
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.946343, 49.60369, 19.961418, 49.619861], 'routes': [{'summary': {'distance': 2974.1, 'duration': 518.0}, 'segments': [{'distance': 2974.1, 'duration': 518.0, 'steps': [{'distance': 591.0, 'duration': 129.0, 'type': 11, 'instruction': 'Head northwest on Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [0, 18]}, {'distance': 450.3, 'duration': 96.6, 'type': 5, 'instruction': 'Turn slight right onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [18, 36]}, {'distance': 541.3, 'duration': 52.2, 'type': 0, 'instruction': 'Turn left onto Sądecka', 'name': 'Sądecka', 'way_points': [36, 56]}, {'distance': 495.3, 'duration': 117.0, 'type': 0, 'instruction': 'Turn left onto Władysława Orkana', 'name': 'Władysława Orkana', 'way_points': [56, 74]}, {'distance': 482.9, 'duration': 67.7, 'type': 7, 'instruction': 'Enter the roundabout and take the 1st exit onto Zakopiańska', 'name': 'Zakopiańska', 'exit_number': 1, 'way_points': [74, 93]}, {'distance': 360.5, 'duration': 42.9, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Podhalańska', 'name': 'Podhalańska', 'exit_number': 2, 'way_points': [93, 110]}, {'distance': 52.8, 'duration': 12.7, 'type': 0, 'instruction': 'Turn left', 'name': '-', 'way_points': [110, 112]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at your destination, on the left', 'name': '-', 'way_points': [112, 112]}]}], 'bbox': [19.946343, 49.60369, 19.961418, 49.619861], 'geometry': 'cjzmH{uyxBY`@EN?L?FHVx@vAdCtElAhF@Fd@zAtAnFhA~BLJNBfAKb@FLHNLZ|APz@JNNJvEhBJJVZxAbBPJR?DXTd@DJBFHZx@~CF`@?THHFRPxALhATnCLt@FZh@xAVp@v@~BZrAHh@`@fCPh@Vb@NN`@RjBd@n@HB?EqAa@aGAaABcB@SRsBLo@XcA^sABI^_BZkAHYDQRs@d@cB@EZ_@H?FGp@BbA`@b@TvAt@NHZNb@T|@d@x@`@FD|@b@d@Vz@b@r@^RJx@b@t@f@BPJJJAFEDM@MAKR}@JQ^k@HKl@cAvA{B`A_BdAiBLSh@iAy@cAH]', 'way_points': [0, 112]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733429910, 'query': {'coordinates': [[19.9616638, 49.6198237], [19.954589, 49.6039846]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 49.6224799,19.9603920 -> 49.6198237,19.9616638
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.95158, 49.61378, 19.961418, 49.622387], 'routes': [{'summary': {'distance': 2308.5, 'duration': 389.5}, 'segments': [{'distance': 2308.5, 'duration': 389.5, 'steps': [{'distance': 38.7, 'duration': 9.3, 'type': 11, 'instruction': 'Head southeast', 'name': '-', 'way_points': [0, 2]}, {'distance': 195.6, 'duration': 23.5, 'type': 1, 'instruction': 'Turn right onto Sądecka, 28', 'name': 'Sądecka, 28', 'way_points': [2, 15]}, {'distance': 1032.9, 'duration': 131.1, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Sądecka', 'name': 'Sądecka', 'exit_number': 2, 'way_points': [15, 47]}, {'distance': 236.4, 'duration': 45.2, 'type': 2, 'instruction': 'Turn sharp left onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [47, 59]}, {'distance': 213.9, 'duration': 51.3, 'type': 6, 'instruction': 'Continue straight onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [59, 65]}, {'distance': 591.0, 'duration': 129.0, 'type': 12, 'instruction': 'Keep left onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [65, 83]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at Jana Kasprowicza, on the left', 'name': '-', 'way_points': [83, 83]}]}], 'bbox': [19.95158, 49.61378, 19.961418, 49.622387], 'geometry': '}zzmHenyxBHIp@i@Lp@Nt@@F@BTjAThALr@DPDPJv@@VCf@EZEDEJAH@PFHHBHCf@DFDtAvAz@jAp@`AdA|ANRvAvBpDhFV^`@l@T\\x@x@hBhAtCdBxA|@|A|@\\R`@R`@?`AQz@QpB_@HAND?UGa@y@_DI[CGEKUe@EYS?QKyAcBW[KKwEiBOKKOQ{@[}AOMMIc@GgAJOCMKiA_CuAoFe@{AAGmAiFeCuEy@wAIW?G?MDOXa@', 'way_points': [0, 83]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733432152, 'query': {'coordinates': [[19.960392, 49.6224799], [19.9616638, 49.6198237]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 49.6224799,19.9603920 -> 49.6039846,19.9545890
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.946343, 49.60369, 19.960453, 49.622387], 'routes': [{'summary': {'distance': 3200.0, 'duration': 456.4}, 'segments': [{'distance': 3200.0, 'duration': 456.4, 'steps': [{'distance': 38.7, 'duration': 9.3, 'type': 11, 'instruction': 'Head southeast', 'name': '-', 'way_points': [0, 2]}, {'distance': 195.6, 'duration': 23.5, 'type': 1, 'instruction': 'Turn right onto Sądecka, 28', 'name': 'Sądecka, 28', 'way_points': [2, 15]}, {'distance': 1574.1, 'duration': 183.3, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Sądecka', 'name': 'Sądecka', 'exit_number': 2, 'way_points': [15, 67]}, {'distance': 495.3, 'duration': 117.0, 'type': 0, 'instruction': 'Turn left onto Władysława Orkana', 'name': 'Władysława Orkana', 'way_points': [67, 85]}, {'distance': 482.9, 'duration': 67.7, 'type': 7, 'instruction': 'Enter the roundabout and take the 1st exit onto Zakopiańska', 'name': 'Zakopiańska', 'exit_number': 1, 'way_points': [85, 104]}, {'distance': 360.5, 'duration': 42.9, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Podhalańska', 'name': 'Podhalańska', 'exit_number': 2, 'way_points': [104, 121]}, {'distance': 52.8, 'duration': 12.7, 'type': 0, 'instruction': 'Turn left', 'name': '-', 'way_points': [121, 123]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at your destination, on the left', 'name': '-', 'way_points': [123, 123]}]}], 'bbox': [19.946343, 49.60369, 19.960453, 49.622387], 'geometry': '}zzmHenyxBHIp@i@Lp@Nt@@F@BTjAThALr@DPDPJv@@VCf@EZEDEJAH@PFHHBHCf@DFDtAvAz@jAp@`AdA|ANRvAvBpDhFV^`@l@T\\x@x@hBhAtCdBxA|@|A|@\\R`@R`@?`AQz@QpB_@HANDHHFRPxALhATnCLt@FZh@xAVp@v@~BZrAHh@`@fCPh@Vb@NN`@RjBd@n@HB?EqAa@aGAaABcB@SRsBLo@XcA^sABI^_BZkAHYDQRs@d@cB@EZ_@H?FGp@BbA`@b@TvAt@NHZNb@T|@d@x@`@FD|@b@d@Vz@b@r@^RJx@b@t@f@BPJJJAFEDM@MAKR}@JQ^k@HKl@cAvA{B`A_BdAiBLSh@iAy@cAH]', 'way_points': [0, 123]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733433619, 'query': {'coordinates': [[19.960392, 49.6224799], [19.954589, 49.6039846]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 49.6039846,19.9545890 -> 49.6198237,19.9616638
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.945792, 49.60369, 19.961418, 49.619861], 'routes': [{'summary': {'distance': 3150.8, 'duration': 494.6}, 'segments': [{'distance': 3150.8, 'duration': 494.6, 'steps': [{'distance': 52.8, 'duration': 12.7, 'type': 11, 'instruction': 'Head northwest', 'name': '-', 'way_points': [0, 2]}, {'distance': 317.7, 'duration': 31.3, 'type': 1, 'instruction': 'Turn right onto Podhalańska', 'name': 'Podhalańska', 'way_points': [2, 13]}, {'distance': 86.4, 'duration': 19.5, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Zakopiańska', 'name': 'Zakopiańska', 'exit_number': 2, 'way_points': [13, 24]}, {'distance': 162.0, 'duration': 13.0, 'type': 13, 'instruction': 'Keep right onto Zakopiańska', 'name': 'Zakopiańska', 'way_points': [24, 27]}, {'distance': 245.2, 'duration': 48.8, 'type': 1, 'instruction': 'Turn right', 'name': '-', 'way_points': [27, 41]}, {'distance': 80.8, 'duration': 11.6, 'type': 1, 'instruction': 'Turn right onto Podhalańska', 'name': 'Podhalańska', 'way_points': [41, 44]}, {'distance': 228.5, 'duration': 32.9, 'type': 0, 'instruction': 'Turn left onto Podhalańska', 'name': 'Podhalańska', 'way_points': [44, 52]}, {'distance': 936.0, 'duration': 99.2, 'type': 5, 'instruction': 'Turn slight right onto Sądecka', 'name': 'Sądecka', 'way_points': [52, 88]}, {'distance': 236.4, 'duration': 45.2, 'type': 1, 'instruction': 'Turn right onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [88, 100]}, {'distance': 213.9, 'duration': 51.3, 'type': 6, 'instruction': 'Continue straight onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [100, 106]}, {'distance': 591.0, 'duration': 129.0, 'type': 12, 'instruction': 'Keep left onto Jana Kasprowicza', 'name': 'Jana Kasprowicza', 'way_points': [106, 124]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at Jana Kasprowicza, on the left', 'name': '-', 'way_points': [124, 124]}]}], 'bbox': [19.945792, 49.60369, 19.961418, 49.619861], 'geometry': 'qgwmHahxxBI\\x@bAi@hAMReAhBaA~AwAzBm@bAIJ_@j@KPGFY`@I?KHCFARBPJJJAFEj@LH?FBLP`@^zEvBIj@Kb@KTMNSNODWBwAKYB]J_@Vq@r@WVMFe@[CCuAiAKf@g@xBMf@WxAI|AIl@UVkAj@MAk@RcAd@[BuB_@a@OaAg@IEYIQAWAmAAW@O?qA@k@CC?o@IkBe@a@SOOWc@Qi@a@gCIi@[sAw@_CWq@i@yAG[Mu@UoCMiAQyAGSII?UGa@y@_DI[CGEKUe@EYS?QKyAcBW[KKwEiBOKKOQ{@[}AOMMIc@GgAJOCMKiA_CuAoFe@{AAGmAiFeCuEy@wAIW?G?MDOXa@', 'way_points': [0, 124]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733435613, 'query': {'coordinates': [[19.954589, 49.6039846], [19.9616638, 49.6198237]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 49.6039846,19.9545890 -> 49.6224799,19.9603920
+[ERROR] Błąd parsowania odpowiedzi ORS: 'features'
+[DEBUG] Odpowiedź ORS: {'bbox': [19.945792, 49.60369, 19.960453, 49.622387], 'routes': [{'summary': {'distance': 3348.1, 'duration': 430.2}, 'segments': [{'distance': 3348.1, 'duration': 430.2, 'steps': [{'distance': 52.8, 'duration': 12.7, 'type': 11, 'instruction': 'Head northwest', 'name': '-', 'way_points': [0, 2]}, {'distance': 317.7, 'duration': 31.3, 'type': 1, 'instruction': 'Turn right onto Podhalańska', 'name': 'Podhalańska', 'way_points': [2, 13]}, {'distance': 86.4, 'duration': 19.5, 'type': 7, 'instruction': 'Enter the roundabout and take the 2nd exit onto Zakopiańska', 'name': 'Zakopiańska', 'exit_number': 2, 'way_points': [13, 24]}, {'distance': 162.0, 'duration': 13.0, 'type': 13, 'instruction': 'Keep right onto Zakopiańska', 'name': 'Zakopiańska', 'way_points': [24, 27]}, {'distance': 245.2, 'duration': 48.8, 'type': 1, 'instruction': 'Turn right', 'name': '-', 'way_points': [27, 41]}, {'distance': 80.8, 'duration': 11.6, 'type': 1, 'instruction': 'Turn right onto Podhalańska', 'name': 'Podhalańska', 'way_points': [41, 44]}, {'distance': 228.5, 'duration': 32.9, 'type': 0, 'instruction': 'Turn left onto Podhalańska', 'name': 'Podhalańska', 'way_points': [44, 52]}, {'distance': 1930.2, 'duration': 226.2, 'type': 5, 'instruction': 'Turn slight right onto Sądecka', 'name': 'Sądecka', 'way_points': [52, 113]}, {'distance': 205.7, 'duration': 24.8, 'type': 7, 'instruction': 'Enter the roundabout and take the 1st exit onto Sądecka, 28', 'name': 'Sądecka, 28', 'exit_number': 1, 'way_points': [113, 127]}, {'distance': 38.7, 'duration': 9.3, 'type': 0, 'instruction': 'Turn left', 'name': '-', 'way_points': [127, 129]}, {'distance': 0.0, 'duration': 0.0, 'type': 10, 'instruction': 'Arrive at your destination, on the right', 'name': '-', 'way_points': [129, 129]}]}], 'bbox': [19.945792, 49.60369, 19.960453, 49.622387], 'geometry': 'qgwmHahxxBI\\x@bAi@hAMReAhBaA~AwAzBm@bAIJ_@j@KPGFY`@I?KHCFARBPJJJAFEj@LH?FBLP`@^zEvBIj@Kb@KTMNSNODWBwAKYB]J_@Vq@r@WVMFe@[CCuAiAKf@g@xBMf@WxAI|AIl@UVkAj@MAk@RcAd@[BuB_@a@OaAg@IEYIQAWAmAAW@O?qA@k@CC?o@IkBe@a@SOOWc@Qi@a@gCIi@[sAw@_CWq@i@yAG[Mu@UoCMiAQyAGSIIOEI@qB^{@PaAPa@?a@S]S}A}@yA}@uCeBiBiAy@y@U]a@m@W_@qDiFwAwBOSeA}Aq@aA{@kAuAwAGE]c@GSAs@EUAWKw@EQEQMs@UiAUkAACAGOu@Mq@q@h@IH', 'way_points': [0, 129]}], 'metadata': {'attribution': 'openrouteservice.org | OpenStreetMap contributors', 'service': 'routing', 'timestamp': 1756733436862, 'query': {'coordinates': [[19.954589, 49.6039846], [19.960392, 49.6224799]], 'profile': 'driving-car', 'profileName': 'driving-car', 'format': 'json'}, 'engine': {'version': '9.3.0', 'build_date': '2025-06-06T15:39:25Z', 'graph_date': '2025-08-31T11:45:10Z', 'osm_date': '2025-08-24T23:59:58Z'}}}
+[INFO] Zapisano parę: 2->1
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv
+[START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Piłsudskiego', 'Numer': '5', 'Miasto': 'Wrocław', 'KodPocztowy': '50-033', 'OknoCzasoweOd': '11:00', 'OknoCzasoweDo': '12:00', 'Lat': '51.1063316', 'Lon': '17.0211178'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Piotrkowska', 'Numer': '85', 'Miasto': 'Łódź', 'KodPocztowy': '90-423', 'OknoCzasoweOd': '13:00', 'OknoCzasoweDo': '14:00', 'Lat': '51.7666167', 'Lon': '19.4566331'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Monte Cassino', 'Numer': '53', 'Miasto': 'Sopot', 'KodPocztowy': '81-759', 'OknoCzasoweOd': '15:00', 'OknoCzasoweDo': '16:00', 'Lat': '54.4443759', 'Lon': '18.5665949'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Staromiejska', 'Numer': '13', 'Miasto': 'Katowice', 'KodPocztowy': '40-013', 'OknoCzasoweOd': '17:00', 'OknoCzasoweDo': '18:00', 'Lat': '50.2583544', 'Lon': '19.0236640'}
+[INFO] Utworzono 30 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.4060391,16.9293623
+[OK] Czas: 275.03 min, Dystans: 462.59 km
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 51.1063316,17.0211178
+[OK] Czas: 169.87 min, Dystans: 274.70 km
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 51.7666167,19.4566331
+[OK] Czas: 172.90 min, Dystans: 284.26 km
+[INFO] Zapisano parę: 0->3
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 54.4443759,18.5665949
+[OK] Czas: 343.78 min, Dystans: 618.70 km
+[INFO] Zapisano parę: 0->4
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 50.2583544,19.0236640
+[OK] Czas: 63.30 min, Dystans: 83.72 km
+[INFO] Zapisano parę: 0->5
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 50.0627426,19.9398622
+[OK] Czas: 277.50 min, Dystans: 465.11 km
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 51.1063316,17.0211178
+[OK] Czas: 129.21 min, Dystans: 183.67 km
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 51.7666167,19.4566331
+[OK] Czas: 140.88 min, Dystans: 212.06 km
+[INFO] Zapisano parę: 1->3
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 54.4443759,18.5665949
+[OK] Czas: 213.91 min, Dystans: 330.61 km
+[INFO] Zapisano parę: 1->4
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 50.2583544,19.0236640
+[OK] Czas: 227.35 min, Dystans: 384.88 km
+[INFO] Zapisano parę: 1->5
+[INFO] Zapytanie ORS: 51.1063316,17.0211178 -> 50.0627426,19.9398622
+[OK] Czas: 169.10 min, Dystans: 275.10 km
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 51.1063316,17.0211178 -> 52.4060391,16.9293623
+[OK] Czas: 126.55 min, Dystans: 182.63 km
+[INFO] Zapisano parę: 2->1
+[INFO] Zapytanie ORS: 51.1063316,17.0211178 -> 51.7666167,19.4566331
+[OK] Czas: 151.45 min, Dystans: 222.42 km
+[INFO] Zapisano parę: 2->3
+[INFO] Zapytanie ORS: 51.1063316,17.0211178 -> 54.4443759,18.5665949
+[OK] Czas: 307.12 min, Dystans: 501.64 km
+[INFO] Zapisano parę: 2->4
+[INFO] Zapytanie ORS: 51.1063316,17.0211178 -> 50.2583544,19.0236640
+[OK] Czas: 118.95 min, Dystans: 194.86 km
+[INFO] Zapisano parę: 2->5
+[INFO] Zapytanie ORS: 51.7666167,19.4566331 -> 50.0627426,19.9398622
+[OK] Czas: 175.26 min, Dystans: 286.07 km
+[INFO] Zapisano parę: 3->0
+[INFO] Zapytanie ORS: 51.7666167,19.4566331 -> 52.4060391,16.9293623
+[OK] Czas: 137.03 min, Dystans: 208.91 km
+[INFO] Zapisano parę: 3->1
+[INFO] Zapytanie ORS: 51.7666167,19.4566331 -> 51.1063316,17.0211178
+[OK] Czas: 150.24 min, Dystans: 221.83 km
+[INFO] Zapisano parę: 3->2
+[INFO] Zapytanie ORS: 51.7666167,19.4566331 -> 54.4443759,18.5665949
+[OK] Czas: 211.38 min, Dystans: 357.28 km
+[INFO] Zapisano parę: 3->4
+[INFO] Zapytanie ORS: 51.7666167,19.4566331 -> 50.2583544,19.0236640
+[OK] Czas: 134.40 min, Dystans: 227.49 km
+[INFO] Zapisano parę: 3->5
+[INFO] Zapytanie ORS: 54.4443759,18.5665949 -> 50.0627426,19.9398622
+[OK] Czas: 347.78 min, Dystans: 622.26 km
+[INFO] Zapisano parę: 4->0
+[INFO] Zapytanie ORS: 54.4443759,18.5665949 -> 52.4060391,16.9293623
+[OK] Czas: 209.62 min, Dystans: 329.86 km
+[INFO] Zapisano parę: 4->1
+[INFO] Zapytanie ORS: 54.4443759,18.5665949 -> 51.1063316,17.0211178
+[OK] Czas: 308.98 min, Dystans: 502.97 km
+[INFO] Zapisano parę: 4->2
+[INFO] Zapytanie ORS: 54.4443759,18.5665949 -> 51.7666167,19.4566331
+[OK] Czas: 212.26 min, Dystans: 358.31 km
+[INFO] Zapisano parę: 4->3
+[INFO] Zapytanie ORS: 54.4443759,18.5665949 -> 50.2583544,19.0236640
+[OK] Czas: 306.91 min, Dystans: 563.68 km
+[INFO] Zapisano parę: 4->5
+[INFO] Zapytanie ORS: 50.2583544,19.0236640 -> 50.0627426,19.9398622
+[ERROR] Błąd API ORS: 429
+[DEBUG] Odpowiedź ORS: {
+    "error": "Rate Limit Exceeded"
+}
+[INFO] Zapisano parę: 5->0
+[INFO] Zapytanie ORS: 50.2583544,19.0236640 -> 52.4060391,16.9293623
+[OK] Czas: 224.16 min, Dystans: 381.18 km
+[INFO] Zapisano parę: 5->1
+[INFO] Zapytanie ORS: 50.2583544,19.0236640 -> 51.1063316,17.0211178
+[OK] Czas: 119.00 min, Dystans: 193.28 km
+[INFO] Zapisano parę: 5->2
+[INFO] Zapytanie ORS: 50.2583544,19.0236640 -> 51.7666167,19.4566331
+[OK] Czas: 134.63 min, Dystans: 219.51 km
+[INFO] Zapisano parę: 5->3
+[INFO] Zapytanie ORS: 50.2583544,19.0236640 -> 54.4443759,18.5665949
+[OK] Czas: 305.51 min, Dystans: 553.94 km
+[INFO] Zapisano parę: 5->4
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv

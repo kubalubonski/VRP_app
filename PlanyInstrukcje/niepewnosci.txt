@@ -1,0 +1,25 @@
+Opis naliczania niepewności trasy w aplikacji:
+
+1. Pobieranie danych z API:
+- Dla każdej pary punktów (odcinka trasy) pobierany jest podstawowy czas przejazdu z API (OpenRouteService/Google Maps).
+- Dla każdego punktu oraz odcinka pobierana jest prognoza pogody (OpenWeatherMap) oraz, jeśli dostępne, dane o ruchu drogowym.
+
+2. Modyfikacja czasu przejazdu:
+- Na podstawie pobranych danych czas przejazdu jest modyfikowany według ustalonych reguł:
+  - Deszcz: czas przejazdu × 1.2
+  - Śnieg: czas przejazdu × 1.5
+  - Duży ruch: czas przejazdu × 1.3
+- Mnożniki można dostosować na podstawie literatury lub własnych testów.
+
+3. Dodanie losowości (symulacja nieprzewidzianych zdarzeń):
+- Do każdego zmodyfikowanego czasu przejazdu dodawany jest losowy czynnik, np. ±10%:
+  - czas_przejazdu = czas_podstawowy × czynnik_pogody × czynnik_ruchu × random.uniform(0.9, 1.1)
+
+4. Tworzenie macierzy czasów:
+- Wszystkie zmodyfikowane czasy przejazdu są zapisywane w macierzy czasów, która jest wykorzystywana przez algorytmy VRP.
+
+5. Wykorzystanie w algorytmach:
+- Algorytmy VRP (GA, ACO, Tabu Search, Symulowane wyżarzanie) korzystają z tej macierzy czasów, uwzględniając wszystkie ograniczenia (ładowność, okna czasowe, kary za naruszenia).
+
+Podsumowanie:
+Proces naliczania niepewności trasy polega na pobraniu danych z API, modyfikacji czasu przejazdu według reguł pogodowych i ruchu, dodaniu losowości oraz zapisaniu wyników w macierzy czasów wykorzystywanej przez algorytmy optymalizacyjne.

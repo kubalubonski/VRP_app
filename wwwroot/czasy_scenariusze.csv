@@ -1,0 +1,7 @@
+StartIdx,EndIdx,StartTyp,EndTyp,StartUlica,StartMiasto,EndUlica,EndMiasto,Distance_km,Duration_time_expected,Duration_time_pessimistic,Duration_time_optimistic
+0,1,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Kraków,294.61,184.6,239.98,156.91
+0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Poznań,309.62,180.28,234.36,153.24
+1,0,PunktDostawy,Magazyn,Floriańska,Kraków,Puławska,Warszawa,293.16,183.38,238.39,155.87
+1,2,PunktDostawy,PunktDostawy,Floriańska,Kraków,Święty Marcin,Poznań,462.59,275.03,357.54,233.78
+2,0,PunktDostawy,Magazyn,Święty Marcin,Poznań,Puławska,Warszawa,314.12,184.65,240.05,156.95
+2,1,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Floriańska,Kraków,465.11,277.5,360.75,235.88

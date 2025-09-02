@@ -1,0 +1,51 @@
+[START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv
+[START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv
+[START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[OK] Scenariusz: 0->1 | 275.03 min
+[OK] Scenariusz: 0->2 | 169.87 min
+[OK] Scenariusz: 0->3 | 172.90 min
+[OK] Scenariusz: 0->4 | 343.78 min
+[OK] Scenariusz: 0->5 | 63.30 min
+[OK] Scenariusz: 1->0 | 277.50 min
+[OK] Scenariusz: 1->2 | 129.21 min
+[OK] Scenariusz: 1->3 | 140.88 min
+[OK] Scenariusz: 1->4 | 213.91 min
+[OK] Scenariusz: 1->5 | 227.35 min
+[OK] Scenariusz: 2->0 | 169.10 min
+[OK] Scenariusz: 2->1 | 126.55 min
+[OK] Scenariusz: 2->3 | 151.45 min
+[OK] Scenariusz: 2->4 | 307.12 min
+[OK] Scenariusz: 2->5 | 118.95 min
+[OK] Scenariusz: 3->0 | 175.26 min
+[OK] Scenariusz: 3->1 | 137.03 min
+[OK] Scenariusz: 3->2 | 150.24 min
+[OK] Scenariusz: 3->4 | 211.38 min
+[OK] Scenariusz: 3->5 | 134.40 min
+[OK] Scenariusz: 4->0 | 347.78 min
+[OK] Scenariusz: 4->1 | 209.62 min
+[OK] Scenariusz: 4->2 | 308.98 min
+[OK] Scenariusz: 4->3 | 212.26 min
+[OK] Scenariusz: 4->5 | 306.91 min
+[ERROR] Błąd scenariusza: could not convert string to float: ''
+[OK] Scenariusz: 5->1 | 224.16 min
+[OK] Scenariusz: 5->2 | 119.00 min
+[OK] Scenariusz: 5->3 | 134.63 min
+[OK] Scenariusz: 5->4 | 305.51 min
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv

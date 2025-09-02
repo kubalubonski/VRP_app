@@ -1,0 +1,141 @@
+[PYTHON][GEOCODE][START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Geokoduję: Puławska 2, Warszawa, 02-566
+[OK] Puławska 2, Warszawa, 02-566 -> 52.2126673, 21.0197383
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Geokoduję: Floriańska 15, Kraków, 31-019
+[OK] Floriańska 15, Kraków, 31-019 -> 50.0627426, 19.9398622
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Geokoduję: Święty Marcin 10, Poznań, 61-803
+[OK] Święty Marcin 10, Poznań, 61-803 -> 52.4060391, 16.9293623
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv
+[PYTHON][ROUTE_TIMES][START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[INFO] Utworzono 6 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 50.0627426,19.9398622
+[OK] Czas: 184.60 min, Dystans: 294.61 km
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 52.4060391,16.9293623
+[OK] Czas: 180.28 min, Dystans: 309.62 km
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.2126673,21.0197383
+[OK] Czas: 183.38 min, Dystans: 293.16 km
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.4060391,16.9293623
+[OK] Czas: 275.03 min, Dystans: 462.59 km
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 52.2126673,21.0197383
+[OK] Czas: 184.65 min, Dystans: 314.12 km
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 50.0627426,19.9398622
+[OK] Czas: 277.50 min, Dystans: 465.11 km
+[INFO] Zapisano parę: 2->1
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv
+[PYTHON][SCENARIOS][START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[OK] Scenariusz: 0->1 | 184.60 min
+[OK] Scenariusz: 0->2 | 180.28 min
+[OK] Scenariusz: 1->0 | 183.38 min
+[OK] Scenariusz: 1->2 | 275.03 min
+[OK] Scenariusz: 2->0 | 184.65 min
+[OK] Scenariusz: 2->1 | 277.50 min
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv
+[PYTHON][GEOCODE][START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Geokoduję: Puławska 2, Warszawa, 02-566
+[OK] Puławska 2, Warszawa, 02-566 -> 52.2126673, 21.0197383
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Geokoduję: Floriańska 15, Kraków, 31-019
+[OK] Floriańska 15, Kraków, 31-019 -> 50.0627426, 19.9398622
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Geokoduję: Święty Marcin 10, Poznań, 61-803
+[OK] Święty Marcin 10, Poznań, 61-803 -> 52.4060391, 16.9293623
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv
+[PYTHON][ROUTE_TIMES][START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[INFO] Utworzono 6 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 50.0627426,19.9398622
+[OK] Czas: 184.60 min, Dystans: 294.61 km
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 52.4060391,16.9293623
+[OK] Czas: 180.28 min, Dystans: 309.62 km
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.2126673,21.0197383
+[OK] Czas: 183.38 min, Dystans: 293.16 km
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.4060391,16.9293623
+[OK] Czas: 275.03 min, Dystans: 462.59 km
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 52.2126673,21.0197383
+[OK] Czas: 184.65 min, Dystans: 314.12 km
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 50.0627426,19.9398622
+[OK] Czas: 277.50 min, Dystans: 465.11 km
+[INFO] Zapisano parę: 2->1
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv
+[PYTHON][SCENARIOS][START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[OK] Scenariusz: 0->1 | 184.60 min
+[OK] Scenariusz: 0->2 | 180.28 min
+[OK] Scenariusz: 1->0 | 183.38 min
+[OK] Scenariusz: 1->2 | 275.03 min
+[OK] Scenariusz: 2->0 | 184.65 min
+[OK] Scenariusz: 2->1 | 277.50 min
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv
+[PYTHON][GEOCODE][START] Geokodowanie adresów: wwwroot/dane_wejsciowe.csv -> wwwroot/dane_wejsciowe_geocoded.csv
+[INFO] Wczytuję dane wejściowe...
+[INFO] Geokoduję: Puławska 2, Warszawa, 02-566
+[OK] Puławska 2, Warszawa, 02-566 -> 52.2126673, 21.0197383
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Geokoduję: Floriańska 15, Kraków, 31-019
+[OK] Floriańska 15, Kraków, 31-019 -> 50.0627426, 19.9398622
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Geokoduję: Święty Marcin 10, Poznań, 61-803
+[OK] Święty Marcin 10, Poznań, 61-803 -> 52.4060391, 16.9293623
+[INFO] Zapisano wiersz: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[END] Geokodowanie zakończone. Wynik zapisano do wwwroot/dane_wejsciowe_geocoded.csv
+[PYTHON][ROUTE_TIMES][START] Pobieranie czasów przejazdu: wwwroot/dane_wejsciowe_geocoded.csv -> wwwroot/czasy_przejazdu.csv
+[INFO] Wczytuję punkty z pliku...
+[INFO] Dodano punkt: {'\ufeffTyp': 'Magazyn', 'Ulica': 'Puławska', 'Numer': '2', 'Miasto': 'Warszawa', 'KodPocztowy': '02-566', 'OknoCzasoweOd': '', 'OknoCzasoweDo': '', 'Lat': '52.2126673', 'Lon': '21.0197383'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Floriańska', 'Numer': '15', 'Miasto': 'Kraków', 'KodPocztowy': '31-019', 'OknoCzasoweOd': '08:00', 'OknoCzasoweDo': '09:00', 'Lat': '50.0627426', 'Lon': '19.9398622'}
+[INFO] Dodano punkt: {'\ufeffTyp': 'PunktDostawy', 'Ulica': 'Święty Marcin', 'Numer': '10', 'Miasto': 'Poznań', 'KodPocztowy': '61-803', 'OknoCzasoweOd': '09:30', 'OknoCzasoweDo': '10:30', 'Lat': '52.4060391', 'Lon': '16.9293623'}
+[INFO] Utworzono 6 par punktów.
+[INFO] Pobieram czasy przejazdu dla par punktów...
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 50.0627426,19.9398622
+[OK] Czas: 184.60 min, Dystans: 294.61 km
+[INFO] Zapisano parę: 0->1
+[INFO] Zapytanie ORS: 52.2126673,21.0197383 -> 52.4060391,16.9293623
+[OK] Czas: 180.28 min, Dystans: 309.62 km
+[INFO] Zapisano parę: 0->2
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.2126673,21.0197383
+[OK] Czas: 183.38 min, Dystans: 293.16 km
+[INFO] Zapisano parę: 1->0
+[INFO] Zapytanie ORS: 50.0627426,19.9398622 -> 52.4060391,16.9293623
+[OK] Czas: 275.03 min, Dystans: 462.59 km
+[INFO] Zapisano parę: 1->2
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 52.2126673,21.0197383
+[OK] Czas: 184.65 min, Dystans: 314.12 km
+[INFO] Zapisano parę: 2->0
+[INFO] Zapytanie ORS: 52.4060391,16.9293623 -> 50.0627426,19.9398622
+[OK] Czas: 277.50 min, Dystans: 465.11 km
+[INFO] Zapisano parę: 2->1
+[END] Pobieranie czasów zakończone. Wynik zapisano do wwwroot/czasy_przejazdu.csv
+[PYTHON][SCENARIOS][START] Generowanie scenariuszy czasowych: wwwroot/czasy_przejazdu.csv -> wwwroot/czasy_scenariusze.csv
+[INFO] Wczytuję czasy przejazdu...
+[OK] Scenariusz: 0->1 | 184.60 min
+[OK] Scenariusz: 0->2 | 180.28 min
+[OK] Scenariusz: 1->0 | 183.38 min
+[OK] Scenariusz: 1->2 | 275.03 min
+[OK] Scenariusz: 2->0 | 184.65 min
+[OK] Scenariusz: 2->1 | 277.50 min
+[END] Generowanie scenariuszy zakończone. Wynik zapisano do wwwroot/czasy_scenariusze.csv

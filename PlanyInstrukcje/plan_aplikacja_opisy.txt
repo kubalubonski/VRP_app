@@ -1,0 +1,59 @@
+1. Cel aplikacji:
+- Opis, do czego służy aplikacja i jakie problemy rozwiązuje (optymalizacja tras dostaw w warunkach niepewności).
+
+2. Funkcjonalności aplikacji:
+- Formularz wejściowy dla użytkownika:
+  - Użytkownik podaje adres magazynu, pojazdy (liczba, pojemność), punkty dostaw (adresy, ilość towaru, okna czasowe).
+  - Możliwość edycji/usuwania danych – użytkownik może poprawiać lub usuwać wprowadzone informacje.
+
+- Geokodowanie adresów:
+  - Zamiana adresów na współrzędne GPS przez API OpenStreetMap, by móc wyznaczać trasy na mapie.
+
+- Pobieranie danych zewnętrznych:
+  - Pobieranie czasów przejazdu między punktami z OpenRouteService/Google Maps.
+  - Pobieranie prognozy pogody dla punktów i tras z OpenWeatherMap.
+  - (Opcjonalnie) Pobieranie danych o ruchu drogowym, jeśli dostępne.
+
+- Modelowanie niepewności:
+  - Modyfikacja czasów przejazdu na podstawie pogody/ruchu (np. deszcz = dłuższy czas).
+  - Dodanie losowości do czasów przejazdu, by zasymulować nieprzewidziane zdarzenia.
+
+- Optymalizacja tras:
+  - Implementacja algorytmów VRP (np. genetyczny, mrówkowy, zachłanny).
+  - Uwzględnienie ograniczeń pojazdów (ładowność) i punktów dostaw (okna czasowe).
+  - Możliwość porównania wyników różnych algorytmów.
+
+- Prezentacja wyników:
+  - Generowanie raportu tras (PDF/CSV) – podsumowanie tras dla każdego pojazdu.
+  - Wyświetlenie tras na mapie (np. OpenStreetMap) – wizualizacja przebiegu tras.
+  - Eksport tras dla kierowców – przygotowanie plików z trasami do przekazania kierowcom.
+
+- Testowanie i analiza:
+  - Przeprowadzanie testów na różnych zestawach danych (np. różne liczby pojazdów, punktów dostaw).
+  - Analiza wpływu niepewności (pogoda, ruch) na wyniki optymalizacji – porównanie różnych scenariuszy.
+
+3. Technologie:
+- Backend: Python (Flask/Django) lub aplikacja desktopowa (PyQt) – obsługa logiki aplikacji.
+- Frontend: Prosty interfejs webowy lub desktopowy – miejsce, gdzie użytkownik wprowadza dane i ogląda wyniki.
+- API: OpenStreetMap Nominatim, OpenRouteService, OpenWeatherMap – źródła danych zewnętrznych.
+- Baza danych: Pliki JSON/CSV lub SQLite – przechowywanie danych wejściowych i wyników.
+- Wizualizacja: OpenStreetMap, matplotlib, folium – prezentacja tras na mapie i w raportach.
+
+4. Przykładowy przepływ działania aplikacji:
+  I. Użytkownik wprowadza dane wejściowe (magazyn, pojazdy, punkty dostaw).
+  II. Aplikacja zamienia adresy na współrzędne GPS.
+  III. Aplikacja pobiera czasy przejazdu i prognozę pogody.
+  IV. Tworzy macierz czasów przejazdu, uwzględniając niepewności.
+  V. Algorytm optymalizuje trasy.
+  VI. Wyniki są prezentowane użytkownikowi (lista tras, mapa, raport).
+
+5. Pliki i moduły:
+- input_form.py – obsługuje formularz wejściowy.
+- geocode.py – zamienia adresy na współrzędne GPS.
+- external_data.py – pobiera dane z API (czasy przejazdu, pogoda).
+- vrp_algorithm.py – implementuje algorytmy optymalizacyjne.
+- uncertainty_model.py – modyfikuje czasy przejazdu na podstawie niepewności.
+- visualization.py – wizualizuje trasy na mapie.
+- report_generator.py – generuje raporty z trasami.
+
+(6. Dodatkowe uwagi – pomijam zgodnie z prośbą)

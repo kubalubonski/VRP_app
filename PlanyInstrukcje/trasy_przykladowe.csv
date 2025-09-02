@@ -1,0 +1,8 @@
+Typ,Ulica,Numer,Miasto,KodPocztowy,OknoCzasoweOd,OknoCzasoweDo
+Magazyn,Puławska,2,Warszawa,02-566,,
+PunktDostawy,Floriańska,15,Kraków,31-019,08:00,09:00
+PunktDostawy,Święty Marcin,10,Poznań,61-803,09:30,10:30
+PunktDostawy,Piłsudskiego,5,Wrocław,50-033,11:00,12:00
+PunktDostawy,Piotrkowska,85,Łódź,90-423,13:00,14:00
+PunktDostawy,Monte Cassino,53,Sopot,81-759,15:00,16:00
+PunktDostawy,Staromiejska,13,Katowice,40-013,17:00,18:00

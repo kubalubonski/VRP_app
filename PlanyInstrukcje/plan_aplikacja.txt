@@ -1,0 +1,67 @@
+PLAN APLIKACJI: Optymalizacja tras przejazdu pojazdów dostawczych w warunkach niepewności
+
+1. Cel aplikacji:
+Aplikacja służy do wyznaczania optymalnych tras dla pojazdów dostawczych, uwzględniając niepewności takie jak pogoda, ruch drogowy oraz jakość dróg.
+
+2. Funkcjonalności aplikacji:
+- Formularz wejściowy dla użytkownika:
+  - Wprowadzenie adresu magazynu startowego.
+  - Wprowadzenie listy pojazdów (liczba, pojemność, opcjonalnie typ).
+  - Wprowadzenie listy punktów dostaw (adresy, opcjonalnie okna czasowe, typ towaru).
+  - Możliwość edycji i usuwania danych wejściowych.
+
+- Geokodowanie adresów:
+  - Zamiana adresów na współrzędne GPS za pomocą API (OpenStreetMap).
+
+- Pobieranie danych zewnętrznych:
+  - Pobieranie czasów przejazdu między punktami z API (OpenRouteService/Google Maps).
+  - Pobieranie prognozy pogody dla punktów dostaw i tras (OpenWeatherMap API).
+  - (Opcjonalnie) Pobieranie danych o ruchu drogowym.
+
+- Modelowanie niepewności:
+  - Modyfikacja czasów przejazdu na podstawie pogody i/lub ruchu.
+  - Dodanie losowości do czasów przejazdu (symulacja różnych scenariuszy).
+
+- Optymalizacja tras:
+  - Implementacja algorytmu VRP (np. genetyczny, mrówkowy, zachłanny).
+  - Uwzględnienie ograniczeń pojazdów i punktów dostaw.
+  - Możliwość porównania różnych algorytmów.
+
+- Prezentacja wyników:
+  -   - Generowanie raportu tras (do pliku PDF/CSV).
+  - Wyświetlenie optymalnych tras dla każdego pojazdu, wizualizacja tras na mapie (np. OpenStreetMap).
+
+  - ? Eksport tras dla kierowców.
+
+- Testowanie i analiza:
+  - Możliwość przeprowadzenia testów na różnych zestawach danych.
+  - Analiza wpływu niepewności na wyniki optymalizacji.
+
+3. Technologie:
+- Backend: Python (Flask/Django)
+- Frontend: Prosty interfejs webowy
+- API: OpenStreetMap Nominatim, OpenRouteService, OpenWeatherMap
+- Baza danych: Pliki JSON/CSV lub SQLite (opcjonalnie)
+- Wizualizacja: OpenStreetMap, matplotlib, folium
+
+4. Przykładowy przepływ działania aplikacji:
+  I. Użytkownik wprowadza dane wejściowe (magazyn, pojazdy, punkty dostaw).
+  II. Aplikacja zamienia adresy na współrzędne GPS.
+  III. Aplikacja pobiera czasy przejazdu i prognozę pogody.
+  IV. Tworzy macierz czasów przejazdu, uwzględniając niepewności.
+  V. Algorytm optymalizuje trasy.
+  VI. Wyniki są prezentowane użytkownikowi (lista tras, mapa, raport).
+
+5. Pliki i moduły:
+- input_form.py – formularz wejściowy
+- geocode.py – geokodowanie adresów
+- external_data.py – pobieranie danych z API
+- vrp_algorithm.py – algorytmy optymalizacyjne
+- uncertainty_model.py – modelowanie niepewności
+- visualization.py – wizualizacja tras
+- report_generator.py – generowanie raportów
+
+6. Dodatkowe uwagi:
+- Na początek można używać przykładowych danych i prostych algorytmów.
+- W miarę postępu pracy dodawać kolejne funkcjonalności i testować aplikację.
+- Dokumentować kod i wyniki testów.

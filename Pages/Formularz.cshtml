@@ -1,0 +1,140 @@
+﻿@page
+@model FormularzModel
+@{
+    ViewData["Title"] = "Formularz danych";
+}
+@if (Model.StatusMessage != null)
+{
+    <div class="alert alert-info">@Model.StatusMessage</div>
+}
+
+<h2 class="mb-4">Wprowadź dane do optymalizacji tras</h2>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Wybierz trasę z folderu <b>wwwroot/trasy</b> lub wczytaj przykładową trasę</label>
+        <div class="d-flex gap-2 align-items-end">
+            <div>
+                <select class="form-select" name="WybranaTrasa">
+                    <option value="">-- wybierz trasę --</option>
+                    @if (ViewData["Trasy"] is List<string> trasy)
+                    {
+                        foreach (var trasa in trasy)
+                        {
+                            <option value="@trasa">@trasa</option>
+                        }
+                    }
+                </select>
+            </div>
+            <div>
+                <button type="submit" asp-page-handler="LoadSelected" class="btn btn-info">Wczytaj wybraną trasę</button>
+            </div>
+            <div>
+                <button type="submit" asp-page-handler="LoadSample" class="btn btn-outline-secondary">Wczytaj przykładową trasę</button>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ulica magazynu</label>
+        <input type="text" class="form-control" name="UlicaMagazynu" value="@Model.UlicaMagazynu" placeholder="np. Przykładowa" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Numer magazynu</label>
+        <input type="text" class="form-control" name="NumerMagazynu" value="@Model.NumerMagazynu" placeholder="np. 1A" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Miasto magazynu</label>
+        <input type="text" class="form-control" name="MiastoMagazynu" value="@Model.MiastoMagazynu" placeholder="np. Warszawa" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Kod pocztowy magazynu</label>
+        <input type="text" class="form-control" name="KodPocztowyMagazynu" value="@Model.KodPocztowyMagazynu" placeholder="np. 00-001" />
+    </div>
+    <div class="mb-3">
+        <label for="liczbaPojazdow" class="form-label">Liczba pojazdów</label>
+        <input type="number" class="form-control" id="liczbaPojazdow" name="LiczbaPojazdow" value="@Model.LiczbaPojazdow" />
+    </div>
+    <hr />
+        <h4 class="mb-3">Punkty dostaw</h4>
+        <div id="punktyDostaw">
+            @if (Model.PunktyDostaw.Count == 0)
+            {
+                <div class="alert alert-info">Brak punktów dostaw. Dodaj pierwszy punkt.</div>
+            }
+            @for (int i = 0; i < Model.PunktyDostaw.Count; i++)
+            {
+                <div class="border rounded p-3 mb-4 bg-light">
+                    <h5 class="mb-3">Punkt dostawy #@(i+1)</h5>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Ulica</label>
+                            <input type="text" class="form-control" name="PunktyDostaw[@i].Ulica" value="@Model.PunktyDostaw[i].Ulica" placeholder="np. Przykładowa" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Numer</label>
+                            <input type="text" class="form-control" name="PunktyDostaw[@i].Numer" value="@Model.PunktyDostaw[i].Numer" placeholder="np. 2B" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Miasto</label>
+                            <input type="text" class="form-control" name="PunktyDostaw[@i].Miasto" value="@Model.PunktyDostaw[i].Miasto" placeholder="np. Kraków" />
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Kod pocztowy</label>
+                            <input type="text" class="form-control" name="PunktyDostaw[@i].KodPocztowy" value="@Model.PunktyDostaw[i].KodPocztowy" placeholder="np. 30-002" />
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Okno czasowe od</label>
+                            <input type="time" class="form-control" name="PunktyDostaw[@i].OknoCzasoweOd" value="@Model.PunktyDostaw[i].OknoCzasoweOd" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Okno czasowe do</label>
+                            <input type="time" class="form-control" name="PunktyDostaw[@i].OknoCzasoweDo" value="@Model.PunktyDostaw[i].OknoCzasoweDo" />
+                        </div>
+                    </div>
+                    <div class="mt-2 text-end">
+                        <button type="submit" name="remove" value="@i" class="btn btn-danger btn-sm">Usuń punkt</button>
+                    </div>
+                </div>
+            }
+        </div>
+    <button type="submit" name="add" value="true" class="btn btn-secondary mb-3">Dodaj punkt dostawy</button>
+    <br />
+    <button type="submit" asp-page-handler="ExportCsv" class="btn btn-primary" id="workflowBtn">Przetwórz dane</button>
+<div id="processingBox" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:9999;">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:1rem;box-shadow:0 0 20px #333;text-align:center;">
+        <div class="spinner-border text-primary mb-3" role="status"></div>
+        <div style="font-size:1.3rem;">Trwa przetwarzanie danych...</div>
+        <div style="font-size:1rem;color:#555;margin-top:0.7rem;">Czas oczekiwania zależy od liczby punktów dostawy.<br />Im więcej punktów, tym dłużej może potrwać pobieranie danych z serwerów zewnętrznych.</div>
+    </div>
+</div>
+    @if (Model.StatusMessage == "Dane wyeksportowane do CSV.")
+    {
+        <button type="submit" asp-page-handler="Geocode" class="btn btn-warning ms-2">Geokoduj adresy</button>
+    }
+    @if (Model.StatusMessage == "Geokodowanie w toku...")
+    {
+        <div class="alert alert-warning mt-3">Geokodowanie w toku... Proszę czekać.</div>
+    }
+    @if (Model.StatusMessage == "Geokodowanie zakończone.")
+    {
+        <button type="submit" asp-page-handler="RouteTimes" class="btn btn-info ms-2">Pobierz czasy przejazdu</button>
+    }
+    @if (Model.StatusMessage == "Czasy przejazdu pobrane.")
+    {
+        <button type="submit" asp-page-handler="Scenarios" class="btn btn-success ms-2">Generuj scenariusze czasowe</button>
+    }
+</form>
+
+
+<div class="mt-4">
+    <a href="/czasy_scenariusze.csv" class="btn btn-outline-primary" download>Pobierz gotowe dane (CSV)</a>
+    <div class="small text-muted mt-1">Możesz pobrać gotowy plik bez generowania. Zawsze pobierany jest najnowszy plik z systemu.</div>
+</div>
+
+@if (Model.StatusMessage == "Scenariusze czasowe wygenerowane.")
+{
+    <div class="alert alert-success mt-3">@Model.StatusMessage</div>
+    <a href="/czasy_scenariusze.csv" class="btn btn-outline-success mt-2" download>Pobierz scenariusze czasowe (CSV)</a>
+    <div class="small text-muted mt-1">Jeśli pobierasz plik wielokrotnie, przeglądarka może dodać (1), (2) itp. do nazwy. Zawsze pobierany jest najnowszy plik z systemu.</div>
+}

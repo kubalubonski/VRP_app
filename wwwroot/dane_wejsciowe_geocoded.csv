@@ -1,0 +1,4 @@
+﻿Typ,Ulica,Numer,Miasto,KodPocztowy,OknoCzasoweOd,OknoCzasoweDo,Lat,Lon
+Magazyn,Puławska,2,Warszawa,02-566,,,52.2126673,21.0197383
+PunktDostawy,Floriańska,15,Kraków,31-019,08:00,09:00,50.0627426,19.9398622
+PunktDostawy,Święty Marcin,10,Poznań,61-803,09:30,10:30,52.4060391,16.9293623

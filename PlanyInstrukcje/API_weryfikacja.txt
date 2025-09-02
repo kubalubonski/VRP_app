@@ -1,0 +1,34 @@
+Weryfikacja i opis API używanych w aplikacji:
+
+a) OpenStreetMap Nominatim
+- Funkcja: Geokodowanie (zamiana adresu na współrzędne GPS).
+- Dostępność: Darmowe, publiczne API, limity zapytań (do użytku niekomercyjnego).
+- Przykład użycia: Wysyłasz zapytanie HTTP z adresem, otrzymujesz współrzędne GPS.
+- Ograniczenia: Nie do zastosowań komercyjnych, limity na liczbę zapytań.
+
+b) OpenRouteService
+- Funkcja: Wyznaczanie tras, pobieranie czasów przejazdu i odległości między punktami.
+- Dostępność: Darmowe konto z limitem zapytań (2500 dziennie).
+- Przykład użycia: Wysyłasz zapytanie HTTP z współrzędnymi startu i celu, otrzymujesz czas przejazdu i trasę.
+- Ograniczenia: Limity dzienne, wymaga rejestracji i klucza API.
+
+c) Google Maps API
+- Funkcja: Geokodowanie, wyznaczanie tras, czasy przejazdu, ruch drogowy.
+- Dostępność: Wymaga klucza API, darmowy limit (200$ miesięcznie), potem płatne.
+- Przykład użycia: Wysyłasz zapytanie HTTP z adresem lub współrzędnymi, otrzymujesz czasy przejazdu, trasę, ruch drogowy.
+- Ograniczenia: Limity darmowe, potem płatne, wymaga rejestracji.
+
+d) OpenWeatherMap API
+- Funkcja: Prognoza pogody dla współrzędnych GPS.
+- Dostępność: Darmowy plan (60 zapytań/minutę), wymaga rejestracji i klucza API.
+- Przykład użycia: Wysyłasz zapytanie HTTP z współrzędnymi GPS, otrzymujesz prognozę pogody.
+- Ograniczenia: Limity zapytań, szczegółowość prognozy zależna od planu.
+
+e) (Opcjonalnie) Google Maps Traffic API / HERE Traffic API
+- Funkcja: Aktualny ruch drogowy.
+- Dostępność: Wymaga klucza API, limity darmowe, potem płatne.
+- Przykład użycia: Wysyłasz zapytanie HTTP z trasą, otrzymujesz dane o ruchu drogowym.
+- Ograniczenia: Limity darmowe, potem płatne, wymaga rejestracji.
+
+Podsumowanie:
+Wszystkie powyższe API pozwalają uzyskać potrzebne dane do aplikacji (geokodowanie, czasy przejazdu, pogoda, opcjonalnie ruch). Do prototypu i pracy magisterskiej darmowe limity powinny wystarczyć.

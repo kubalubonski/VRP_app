@@ -1,0 +1,33 @@
+Przykłady zapytań do wybranych API:
+
+a) OpenStreetMap Nominatim (geokodowanie)
+Przykład zapytania HTTP (GET):
+https://nominatim.openstreetmap.org/search?q=ul.+Przykładowa+1,+Warszawa&format=json&limit=1
+
+b) OpenRouteService (czas przejazdu, trasa)
+Przykład zapytania HTTP (POST):
+URL: https://api.openrouteservice.org/v2/directions/driving-car
+Nagłówki: Authorization: [Twój klucz API]
+Body (JSON):
+{
+  "coordinates": [[21.012229, 52.229675], [21.017532, 52.237049]]
+}
+
+c) Google Maps Geocoding API (geokodowanie)
+Przykład zapytania HTTP (GET):
+https://maps.googleapis.com/maps/api/geocode/json?address=ul.+Przykładowa+1,+Warszawa&key=TWÓJ_KLUCZ_API
+
+d) Google Maps Directions API (trasa, czas przejazdu)
+Przykład zapytania HTTP (GET):
+https://maps.googleapis.com/maps/api/directions/json?origin=52.229675,21.012229&destination=52.237049,21.017532&key=TWÓJ_KLUCZ_API
+
+e) OpenWeatherMap API (pogoda dla współrzędnych GPS)
+Przykład zapytania HTTP (GET):
+https://api.openweathermap.org/data/2.5/weather?lat=52.229675&lon=21.012229&appid=TWÓJ_KLUCZ_API
+
+f) Google Maps Traffic API / HERE Traffic API (ruch drogowy)
+Google Traffic jest częścią Directions API, dane o ruchu są w odpowiedzi na zapytanie Directions.
+HERE Traffic API przykładowe zapytanie (GET):
+https://traffic.ls.hereapi.com/traffic/6.3/incidents.json?bbox=52.229675,21.012229;52.237049,21.017532&apiKey=TWÓJ_KLUCZ_API
+
+Uwaga: Do wszystkich zapytań wymagane są klucze API (poza Nominatim). Odpowiedzi są w formacie JSON.
