@@ -25,12 +25,19 @@ with open(INPUT_CSV, newline='', encoding='utf-8') as infile:
     reader = csv.DictReader(infile)
     for row in reader:
         if row.get('Lat') and row.get('Lon'):
+            okno_od = row.get('OknoCzasoweOd', '').strip()
+            okno_do = row.get('OknoCzasoweDo', '').strip()
+            okno_czasowe = ''
+            if okno_od and okno_do:
+                okno_czasowe = f"{okno_od}-{okno_do}"
+            
             punkty.append({
                 'Typ': row.get('Typ', row.get('\ufeffTyp', '')),
                 'Ulica': row.get('Ulica',''),
                 'Miasto': row.get('Miasto',''),
                 'Lat': row['Lat'],
-                'Lon': row['Lon']
+                'Lon': row['Lon'],
+                'TimeWindow': okno_czasowe
             })
             log(f"[INFO] Dodano punkt: {row}")
 
@@ -72,7 +79,7 @@ def get_route_time(lat1, lon1, lat2, lon2):
 
 log("[INFO] Pobieram czasy przejazdu dla par punktów...")
 with open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as outfile:
-    fieldnames = ['StartIdx','EndIdx','StartTyp','EndTyp','StartUlica','StartMiasto','EndUlica','EndMiasto','Distance_km','Duration_time']
+    fieldnames = ['StartIdx','EndIdx','StartTyp','EndTyp','StartUlica','StartMiasto','EndUlica','EndMiasto','DeliveryTimeWindow','Distance_km','Duration_time']
     writer = csv.DictWriter(outfile, fieldnames=fieldnames)
     writer.writeheader()
     for i, j, start, end in pary:
@@ -87,6 +94,7 @@ with open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as outfile:
             'StartMiasto': start['Miasto'],
             'EndUlica': end['Ulica'],
             'EndMiasto': end['Miasto'],
+            'DeliveryTimeWindow': end['TimeWindow'],
             'Distance_km': round(distance,2) if distance else '',
             'Duration_time': round(duration,2) if duration else ''
         })

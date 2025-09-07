@@ -17,7 +17,7 @@ log(f"[PYTHON][SCENARIOS][START] Generowanie scenariuszy czasowych: {INPUT_CSV} 
 log("[INFO] Wczytuję czasy przejazdu...")
 with open(INPUT_CSV, newline='', encoding='utf-8') as infile, open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as outfile:
     reader = csv.DictReader(infile)
-    fieldnames = ['StartIdx','EndIdx','StartTyp','EndTyp','StartUlica','StartMiasto','EndUlica','EndMiasto','Distance_km','Duration_time_expected','Duration_time_pessimistic','Duration_time_optimistic']
+    fieldnames = ['StartIdx','EndIdx','StartTyp','EndTyp','StartUlica','StartMiasto','EndUlica','EndMiasto','DeliveryTimeWindow','Distance_km','Duration_time_expected','Duration_time_pessimistic','Duration_time_optimistic']
     writer = csv.DictWriter(outfile, fieldnames=fieldnames)
     writer.writeheader()
     for row in reader:
@@ -32,6 +32,7 @@ with open(INPUT_CSV, newline='', encoding='utf-8') as infile, open(OUTPUT_CSV, '
                 'StartMiasto': row.get('StartMiasto',''),
                 'EndUlica': row.get('EndUlica',''),
                 'EndMiasto': row.get('EndMiasto',''),
+                'DeliveryTimeWindow': row.get('DeliveryTimeWindow',''),
                 'Distance_km': row.get('Distance_km',''),
                 'Duration_time_expected': round(duration_min, 2),
                 'Duration_time_pessimistic': round(duration_min * PESSIMISTIC_MULTIPLIER, 2),
@@ -48,6 +49,7 @@ with open(INPUT_CSV, newline='', encoding='utf-8') as infile, open(OUTPUT_CSV, '
                 'StartMiasto': row.get('StartMiasto',''),
                 'EndUlica': row.get('EndUlica',''),
                 'EndMiasto': row.get('EndMiasto',''),
+                'DeliveryTimeWindow': row.get('DeliveryTimeWindow',''),
                 'Distance_km': row.get('Distance_km',''),
                 'Duration_time_expected': '',
                 'Duration_time_pessimistic': '',
