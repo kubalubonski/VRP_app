@@ -1,0 +1,40 @@
+# Build outputs
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Build artifacts
+*.sourcelink.json
+
+# User-specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Visual Studio files
+.vs/
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Package files
+*.nupkg
+packages/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+
+# Runtime files
+*.runtimeconfig.json
