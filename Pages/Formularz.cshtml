@@ -5,7 +5,32 @@
 }
 @if (Model.StatusMessage != null)
 {
-    <div class="alert alert-info">@Model.StatusMessage</div>
+    @if (Model.StatusMessage == "Rozpoczęto przetwarzanie danych...")
+    {
+        <!-- Przetwarzanie obsługiwane przez pełnoekranowe okno -->
+    }
+    else if (Model.StatusMessage.Contains("Trwa") || Model.StatusMessage.Contains("✓"))
+    {
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> <strong>Status:</strong> @Model.StatusMessage
+        </div>
+    }
+    else if (Model.StatusMessage.Contains("Przekroczono limit API"))
+    {
+        <div class="alert alert-warning">
+            <i class="fas fa-exclamation-triangle"></i> <strong>Uwaga:</strong> @Model.StatusMessage
+        </div>
+    }
+    else if (Model.StatusMessage.Contains("błąd") || Model.StatusMessage.Contains("Błąd"))
+    {
+        <div class="alert alert-danger">
+            <i class="fas fa-times-circle"></i> <strong>Błąd:</strong> @Model.StatusMessage
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">@Model.StatusMessage</div>
+    }
 }
 
 <h2 class="mb-4">Wprowadź dane do optymalizacji tras</h2>
@@ -104,28 +129,14 @@
 <div id="processingBox" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);z-index:9999;">
     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem 3rem;border-radius:1rem;box-shadow:0 0 20px #333;text-align:center;">
         <div class="spinner-border text-primary mb-3" role="status"></div>
-        <div style="font-size:1.3rem;">Trwa przetwarzanie danych...</div>
+        <div style="font-size:1.3rem;">Przetwarzanie danych w toku</div>
+        <div id="processing-status-text" style="font-size:1.1rem;color:#333;margin-top:1rem;padding:0.8rem;background:#f8f9fa;border-radius:0.5rem;">
+            Rozpoczynanie przetwarzania...
+        </div>
         <div style="font-size:1rem;color:#555;margin-top:0.7rem;">Czas oczekiwania zależy od liczby punktów dostawy.<br />Im więcej punktów, tym dłużej może potrwać pobieranie danych z serwerów zewnętrznych.</div>
     </div>
 </div>
-    @if (Model.StatusMessage == "Dane wyeksportowane do CSV.")
-    {
-        <button type="submit" asp-page-handler="Geocode" class="btn btn-warning ms-2">Geokoduj adresy</button>
-    }
-    @if (Model.StatusMessage == "Geokodowanie w toku...")
-    {
-        <div class="alert alert-warning mt-3">Geokodowanie w toku... Proszę czekać.</div>
-    }
-    @if (Model.StatusMessage == "Geokodowanie zakończone.")
-    {
-        <button type="submit" asp-page-handler="RouteTimes" class="btn btn-info ms-2">Pobierz czasy przejazdu</button>
-    }
-    @if (Model.StatusMessage == "Czasy przejazdu pobrane.")
-    {
-        <button type="submit" asp-page-handler="Scenarios" class="btn btn-success ms-2">Generuj scenariusze czasowe</button>
-    }
 </form>
-
 
 <div class="mt-4">
     <a href="/czasy_scenariusze.csv" class="btn btn-outline-primary" download>Pobierz gotowe dane (CSV)</a>
@@ -138,3 +149,50 @@
     <a href="/czasy_scenariusze.csv" class="btn btn-outline-success mt-2" download>Pobierz scenariusze czasowe (CSV)</a>
     <div class="small text-muted mt-1">Jeśli pobierasz plik wielokrotnie, przeglądarka może dodać (1), (2) itp. do nazwy. Zawsze pobierany jest najnowszy plik z systemu.</div>
 }
+
+<script>
+let processingInterval;
+
+function startProcessingMonitor() {
+    processingInterval = setInterval(checkProcessingStatus, 2000);
+    checkProcessingStatus();
+}
+
+function checkProcessingStatus() {
+    fetch('?handler=ProcessingStatus')
+        .then(response => response.json())
+        .then(data => {
+            const statusElement = document.getElementById('processing-status-text');
+            if (!statusElement) return;
+            
+            const status = data.status;
+            
+            if (status.startsWith('COMPLETED:')) {
+                statusElement.innerHTML = status.substring(10);
+                clearInterval(processingInterval);
+                setTimeout(() => {
+                    window.location.href = '/Wynik';
+                }, 3000);
+            } else if (status.startsWith('ERROR:')) {
+                statusElement.innerHTML = '❌ ' + status.substring(6);
+                clearInterval(processingInterval);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000);
+            } else {
+                statusElement.innerHTML = status;
+            }
+        })
+        .catch(error => {
+            console.error('Błąd podczas sprawdzania statusu:', error);
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const statusMessage = '@Model.StatusMessage';
+    if (statusMessage && statusMessage.includes('Rozpocz')) {
+        document.getElementById('processingBox').style.display = 'block';
+        startProcessingMonitor();
+    }
+});
+</script>

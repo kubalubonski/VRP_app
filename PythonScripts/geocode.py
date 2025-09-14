@@ -3,6 +3,11 @@ import requests
 import time
 import sys
 
+# Kody błędów
+EXIT_SUCCESS = 0
+EXIT_ERROR = 1  
+EXIT_API_LIMIT = 2
+
 # Konfiguracja
 INPUT_CSV = 'wwwroot/dane_wejsciowe.csv'  # Plik wejściowy
 OUTPUT_CSV = 'wwwroot/dane_wejsciowe_geocoded.csv'  # Plik wyjściowy
@@ -28,16 +33,26 @@ def geocode_address(ulica, numer, miasto, kod_pocztowy):
         'limit': 1
     }
     headers = {'User-Agent': USER_AGENT}
-    response = requests.get(API_URL, params=params, headers=headers)
-    if response.status_code == 200:
-        data = response.json()
-        if data:
-            log(f"[OK] {address} -> {data[0]['lat']}, {data[0]['lon']}")
-            return data[0]['lat'], data[0]['lon']
+    try:
+        response = requests.get(API_URL, params=params, headers=headers, timeout=10)
+        if response.status_code == 429:
+            log(f"[ERROR] Limit API przekroczony dla: {address}")
+            sys.exit(EXIT_API_LIMIT)
+        elif response.status_code == 200:
+            data = response.json()
+            if data:
+                log(f"[OK] {address} -> {data[0]['lat']}, {data[0]['lon']}")
+                return data[0]['lat'], data[0]['lon']
+            else:
+                log(f"[WARN] Brak wyników dla: {address}")
         else:
-            log(f"[WARN] Brak wyników dla: {address}")
-    else:
-        log(f"[ERROR] Błąd API dla: {address} ({response.status_code})")
+            log(f"[ERROR] Błąd API dla: {address} ({response.status_code})")
+    except requests.exceptions.Timeout:
+        log(f"[ERROR] Timeout dla: {address}")
+        sys.exit(EXIT_ERROR)
+    except requests.exceptions.RequestException as e:
+        log(f"[ERROR] Błąd połączenia dla: {address} - {e}")
+        sys.exit(EXIT_ERROR)
     return '', ''
 
 log("[INFO] Wczytuję dane wejściowe...")
@@ -62,3 +77,4 @@ with open(INPUT_CSV, newline='', encoding='utf-8') as infile, open(OUTPUT_CSV, '
         writer.writerow(row)
         log(f"[INFO] Zapisano wiersz: {row}")
 log(f"[END] Geokodowanie zakończone. Wynik zapisano do {OUTPUT_CSV}")
+sys.exit(EXIT_SUCCESS)

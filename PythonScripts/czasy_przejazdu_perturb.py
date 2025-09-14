@@ -1,6 +1,11 @@
 import csv
 import sys
 
+# Kody błędów
+EXIT_SUCCESS = 0
+EXIT_ERROR = 1  
+EXIT_API_LIMIT = 2
+
 INPUT_CSV = 'wwwroot/czasy_przejazdu.csv'  # Plik z czasami przejazdu pobranymi z API
 OUTPUT_CSV = 'wwwroot/czasy_scenariusze.csv'  # Plik wynikowy
 LOG_FILE = 'Logs/log_python.txt'
@@ -57,3 +62,4 @@ with open(INPUT_CSV, newline='', encoding='utf-8') as infile, open(OUTPUT_CSV, '
             })
             log(f"[ERROR] Błąd scenariusza: {e}")
     log(f"[END] Generowanie scenariuszy zakończone. Wynik zapisano do {OUTPUT_CSV}")
+sys.exit(EXIT_SUCCESS)

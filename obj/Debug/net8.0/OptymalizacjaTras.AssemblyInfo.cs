@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OptymalizacjaTras")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc54ac4d4e837f4a559ab2d8500fc0ebd65f8e10")]
 [assembly: System.Reflection.AssemblyProductAttribute("OptymalizacjaTras")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OptymalizacjaTras")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
