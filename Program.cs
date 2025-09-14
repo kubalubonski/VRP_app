@@ -1,7 +1,20 @@
+using OptymalizacjaTras.Services;
+using OptymalizacjaTras.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+// Konfiguracja
+builder.Services.Configure<PathConfiguration>(
+    builder.Configuration.GetSection("PathConfiguration"));
+builder.Services.Configure<ProcessingConfiguration>(
+    builder.Configuration.GetSection("ProcessingConfiguration"));
+
+// Rejestracja serwisów
+builder.Services.AddScoped<IProcessingService, ProcessingService>();
+builder.Services.AddScoped<IStatusService, StatusService>();
 
 var app = builder.Build();
 

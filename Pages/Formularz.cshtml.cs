@@ -5,11 +5,23 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OptymalizacjaTras.Models;
+using OptymalizacjaTras.Services;
 
 namespace OptymalizacjaTras.Pages
 {
     public class FormularzModel : PageModel
     {
+        private readonly IProcessingService _processingService;
+        private readonly IStatusService _statusService;
+        private readonly ILogger<FormularzModel> _logger;
+
+        public FormularzModel(IProcessingService processingService, IStatusService statusService, ILogger<FormularzModel> logger)
+        {
+            _processingService = processingService;
+            _statusService = statusService;
+            _logger = logger;
+        }
+
         public string? StatusMessage { get; set; }
 
         [BindProperty]
@@ -26,17 +38,6 @@ namespace OptymalizacjaTras.Pages
         public List<PunktDostawy> PunktyDostaw { get; set; } = new();
         [BindProperty]
         public string? WybranaTrasa { get; set; }
-
-        private string GetErrorMessage(int exitCode, string operationName)
-        {
-            return exitCode switch
-            {
-                0 => "OK",
-                1 => $"{operationName}: Wystąpił błąd",
-                2 => $"{operationName}: Przekroczono limit API - spróbuj za kilka minut",
-                _ => $"{operationName}: Nieznany błąd (kod: {exitCode})"
-            };
-        }
 
         public IActionResult OnPostLoadSelected()
         {
@@ -149,14 +150,14 @@ namespace OptymalizacjaTras.Pages
 
         public IActionResult OnPostExportCsv()
         {
-            string configPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "config.csv");
-            System.IO.File.WriteAllText(configPath, $"LiczbaPojazdow,{LiczbaPojazdow}\n");
+            // Walidacja danych
             if (string.IsNullOrWhiteSpace(MiastoMagazynu) || string.IsNullOrWhiteSpace(KodPocztowyMagazynu))
             {
                 ModelState.AddModelError("MiastoMagazynu", "Podaj miasto magazynu.");
                 ModelState.AddModelError("KodPocztowyMagazynu", "Podaj kod pocztowy magazynu.");
                 return Page();
             }
+
             for (int i = 0; i < PunktyDostaw.Count; i++)
             {
                 if (string.IsNullOrWhiteSpace(PunktyDostaw[i].Miasto) || string.IsNullOrWhiteSpace(PunktyDostaw[i].KodPocztowy))
@@ -166,6 +167,8 @@ namespace OptymalizacjaTras.Pages
                     return Page();
                 }
             }
+
+            // Utworzenie obiektu danych
             var dane = new DaneWejsciowe
             {
                 UlicaMagazynu = UlicaMagazynu,
@@ -175,205 +178,25 @@ namespace OptymalizacjaTras.Pages
                 LiczbaPojazdow = LiczbaPojazdow,
                 PunktyDostaw = PunktyDostaw
             };
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "dane_wejsciowe.csv");
-            CsvExporter.ExportDaneWejsciowe(dane, filePath);
-            LogProces("[START] Workflow po eksporcie do CSV");
-            LogProces("Eksport danych do CSV: OK");
 
-            // Zapisz status że proces się rozpoczął
-            var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-            System.IO.File.WriteAllText(statusPath, "🚀 Rozpoczynanie przetwarzania - przygotowywanie danych...");
+            _logger.LogInformation("[START] Workflow po eksporcie do CSV");
 
             // Uruchom przetwarzanie w tle
-            _ = Task.Run(() => ExecuteWorkflowInBackground());
+            _ = Task.Run(async () => await _processingService.ExecuteWorkflowAsync(dane));
             
             StatusMessage = "Rozpoczęto przetwarzanie danych...";
             return Page();
         }
 
-        private async Task ExecuteWorkflowInBackground()
+        public async Task<IActionResult> OnGetProcessingStatus()
         {
-            var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-            
-            try
+            var status = await _statusService.GetCurrentStatusAsync();
+            if (string.IsNullOrEmpty(status))
             {
-                // ETAP 1: GEOKODOWANIE
-                System.IO.File.WriteAllText(statusPath, "🌍 Geokodowanie adresów - konwersja na współrzędne GPS...");
-                var success1 = await ExecuteGeocodingAsync();
-                if (!success1) return;
-
-                // ETAP 2: POBIERANIE CZASÓW
-                System.IO.File.WriteAllText(statusPath, "✅ Geokodowanie ukończone! 🚗 Pobieranie czasów przejazdu z API...");
-                var success2 = await ExecuteRoutingAsync();
-                if (!success2) return;
-
-                // ETAP 3: SCENARIUSZE
-                System.IO.File.WriteAllText(statusPath, "✅ Pobieranie czasów ukończone! ⚡ Generowanie scenariuszy czasowych...");
-                var success3 = await ExecuteScenariosAsync();
-                if (!success3) return;
-
-                // KONIEC
-                System.IO.File.WriteAllText(statusPath, "COMPLETED:🎉 Wszystkie etapy zakończone pomyślnie! Dane gotowe do pobrania.");
-                LogProces("[END] Workflow zakończony");
+                status = "Brak informacji o statusie";
             }
-            catch (Exception ex)
-            {
-                System.IO.File.WriteAllText(statusPath, $"ERROR:Błąd podczas przetwarzania: {ex.Message}");
-                LogProces($"[ERROR] Workflow błąd: {ex.Message}");
-            }
+            return new JsonResult(new { status = status });
         }
-
-        private async Task<bool> ExecuteGeocodingAsync()
-        {
-            var psiGeo = new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "python",
-                Arguments = "PythonScripts/geocode.py",
-                WorkingDirectory = Directory.GetCurrentDirectory(),
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            try
-            {
-                using var processGeo = System.Diagnostics.Process.Start(psiGeo);
-                if (processGeo != null)
-                {
-                    await processGeo.WaitForExitAsync();
-                    string errorMessage = GetErrorMessage(processGeo.ExitCode, "Geokodowanie");
-                    if (processGeo.ExitCode == 0)
-                    {
-                        LogProces("Geokodowanie: OK");
-                        return true;
-                    }
-                    else
-                    {
-                        LogProces(errorMessage);
-                        var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                        System.IO.File.WriteAllText(statusPath, $"ERROR:{errorMessage}");
-                        return false;
-                    }
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                LogProces($"Geokodowanie: BŁĄD uruchamiania skryptu: {ex.Message}");
-                var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                System.IO.File.WriteAllText(statusPath, $"ERROR:Błąd geokodowania: {ex.Message}");
-                return false;
-            }
-        }
-
-        private async Task<bool> ExecuteRoutingAsync()
-        {
-            var psiTimes = new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "python",
-                Arguments = "PythonScripts/route_times.py",
-                WorkingDirectory = Directory.GetCurrentDirectory(),
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            
-            try
-            {
-                using var processTimes = System.Diagnostics.Process.Start(psiTimes);
-                if (processTimes != null)
-                {
-                    await processTimes.WaitForExitAsync();
-                    string errorMessage = GetErrorMessage(processTimes.ExitCode, "Pobieranie czasów");
-                    if (processTimes.ExitCode == 0)
-                    {
-                        LogProces("Czasy przejazdu: OK");
-                        return true;
-                    }
-                    else
-                    {
-                        LogProces(errorMessage);
-                        var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                        System.IO.File.WriteAllText(statusPath, $"ERROR:{errorMessage}");
-                        return false;
-                    }
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                LogProces($"Czasy przejazdu: BŁĄD uruchamiania skryptu: {ex.Message}");
-                var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                System.IO.File.WriteAllText(statusPath, $"ERROR:Błąd pobierania czasów: {ex.Message}");
-                return false;
-            }
-        }
-
-        private async Task<bool> ExecuteScenariosAsync()
-        {
-            var psiScen = new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "python",
-                Arguments = "PythonScripts/czasy_przejazdu_perturb.py",
-                WorkingDirectory = Directory.GetCurrentDirectory(),
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            
-            try
-            {
-                using var processScen = System.Diagnostics.Process.Start(psiScen);
-                if (processScen != null)
-                {
-                    await processScen.WaitForExitAsync();
-                    string errorMessage = GetErrorMessage(processScen.ExitCode, "Scenariusze czasowe");
-                    if (processScen.ExitCode == 0)
-                    {
-                        LogProces("Scenariusze czasowe: OK");
-                        return true;
-                    }
-                    else
-                    {
-                        LogProces(errorMessage);
-                        var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                        System.IO.File.WriteAllText(statusPath, $"ERROR:{errorMessage}");
-                        return false;
-                    }
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                LogProces($"Scenariusze czasowe: BŁĄD uruchamiania skryptu: {ex.Message}");
-                var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-                System.IO.File.WriteAllText(statusPath, $"ERROR:Błąd scenariuszy: {ex.Message}");
-                return false;
-            }
-        }
-
-        public IActionResult OnGetProcessingStatus()
-        {
-            var statusPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "processing_status.txt");
-            if (System.IO.File.Exists(statusPath))
-            {
-                var status = System.IO.File.ReadAllText(statusPath);
-                return new JsonResult(new { status = status });
-            }
-            return new JsonResult(new { status = "Brak informacji o statusie" });
-        }
-
-        private void LogProces(string msg)
-        {
-            string logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs", "log_aplikacja.txt");
-            System.IO.File.AppendAllText(logPath, $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {msg}\n");
-        }
-
-
-
-
 
         public IActionResult OnPostLoadSample()
         {
