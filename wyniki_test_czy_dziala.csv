@@ -1,0 +1,3 @@
+dataset,algorithm,total_cost,vehicles_used,total_distance_km,waiting_total,avg_distance_per_route,avg_wait_per_client,lateness_P_sum,horizon_excess_E,makespan_E,sum_route_time_E,avg_route_time_E
+app_20_loose,Savings,125572.51999999999,15,10586.12,404.63,705.7413333333334,20.2315,315.66999999999996,530.05,716.29,8706.17,580.4113333333333
+app_20_loose,Insertion,125993.82999999999,15,11007.430000000002,356.41,733.8286666666668,17.820500000000003,315.66999999999996,530.05,716.29,8979.87,598.658

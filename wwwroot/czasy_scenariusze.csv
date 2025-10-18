@@ -1,7 +1,7 @@
 StartIdx,EndIdx,StartTyp,EndTyp,StartUlica,StartMiasto,EndUlica,EndMiasto,DeliveryTimeWindow,Distance_km,Duration_time_expected,Duration_time_pessimistic,Duration_time_optimistic
 0,1,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Kraków,08:00-09:00,294.61,184.4,239.72,156.74
-0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Poznań,09:30-10:30,309.62,180.74,234.96,153.63
+0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Poznań,09:30-10:30,309.62,180.79,235.03,153.67
 1,0,PunktDostawy,Magazyn,Floriańska,Kraków,Puławska,Warszawa,,293.17,183.57,238.64,156.03
-1,2,PunktDostawy,PunktDostawy,Floriańska,Kraków,Święty Marcin,Poznań,09:30-10:30,462.59,275.03,357.54,233.78
-2,0,PunktDostawy,Magazyn,Święty Marcin,Poznań,Puławska,Warszawa,,314.12,184.46,239.8,156.79
+1,2,PunktDostawy,PunktDostawy,Floriańska,Kraków,Święty Marcin,Poznań,09:30-10:30,462.61,274.7,357.11,233.49
+2,0,PunktDostawy,Magazyn,Święty Marcin,Poznań,Puławska,Warszawa,,314.12,184.51,239.86,156.83
 2,1,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Floriańska,Kraków,08:00-09:00,465.11,277.5,360.75,235.88

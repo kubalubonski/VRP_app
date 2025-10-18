@@ -3,6 +3,11 @@ import requests
 import time
 import sys
 
+# Kody błędów
+EXIT_SUCCESS = 0
+EXIT_ERROR = 1  
+EXIT_API_LIMIT = 2
+
 # Konfiguracja
 INPUT_CSV = 'wwwroot/dane_wejsciowe_geocoded.csv'  # Plik z współrzędnymi
 OUTPUT_CSV = 'wwwroot/czasy_przejazdu.csv'  # Wynikowy plik z czasami przejazdu
@@ -61,18 +66,33 @@ def get_route_time(lat1, lon1, lat2, lon2):
         ]
     }
     log(f"[INFO] Zapytanie ORS: {lat1},{lon1} -> {lat2},{lon2}")
-    response = requests.post(ORS_API_URL, json=body, headers=headers)
-    if response.status_code == 200:
-        data = response.json()
-        try:
-            duration = data['routes'][0]['segments'][0]['duration'] / 60.0
-            distance = data['routes'][0]['segments'][0]['distance'] / 1000.0
-            log(f"[OK] Czas: {duration:.2f} min, Dystans: {distance:.2f} km")
-            return duration, distance
-        except Exception as e:
-            log(f"[ERROR] Błąd parsowania odpowiedzi ORS: {e}")
-            log(f"[DEBUG] Odpowiedź ORS: {data}")
-    else:
+    try:
+        response = requests.post(ORS_API_URL, json=body, headers=headers, timeout=15)
+        if response.status_code == 429:
+            log(f"[ERROR] Limit API ORS przekroczony")
+            sys.exit(EXIT_API_LIMIT)
+        elif response.status_code == 401 or response.status_code == 403:
+            log(f"[ERROR] Błędny klucz API ORS")
+            sys.exit(EXIT_ERROR)
+        elif response.status_code == 200:
+            data = response.json()
+            try:
+                duration = data['routes'][0]['segments'][0]['duration'] / 60.0
+                distance = data['routes'][0]['segments'][0]['distance'] / 1000.0
+                log(f"[OK] Czas: {duration:.2f} min, Dystans: {distance:.2f} km")
+                return duration, distance
+            except (KeyError, IndexError) as e:
+                log(f"[ERROR] Błąd parsowania odpowiedzi ORS: {e}")
+                sys.exit(EXIT_ERROR)
+        else:
+            log(f"[ERROR] Błąd API ORS: {response.status_code}")
+            sys.exit(EXIT_ERROR)
+    except requests.exceptions.Timeout:
+        log(f"[ERROR] Timeout API ORS")
+        sys.exit(EXIT_ERROR)
+    except requests.exceptions.RequestException as e:
+        log(f"[ERROR] Błąd połączenia z ORS: {e}")
+        sys.exit(EXIT_ERROR)
         log(f"[ERROR] Błąd API ORS: {response.status_code}")
         log(f"[DEBUG] Odpowiedź ORS: {response.text}")
     return None, None
@@ -100,3 +120,4 @@ with open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as outfile:
         })
         log(f"[INFO] Zapisano parę: {i}->{j}")
 log(f"[END] Pobieranie czasów zakończone. Wynik zapisano do {OUTPUT_CSV}")
+sys.exit(EXIT_SUCCESS)
