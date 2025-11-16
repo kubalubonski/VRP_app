@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "dataset": "app_final_20_tight",
+  "dataset_size": null,
+  "window_profile": null,
+  "algorithm": "BEST(Insertion)",
+  "generated_at": "2025-11-08T16:01:34.156697+00:00",
+  "parameters": {
+    "day_horizon": 600,
+    "service_time": 0.0,
+    "cost_model": {
+      "cost_per_km": 1.0,
+      "vehicle_fixed_cost": 900.0,
+      "penalty_horizon_per_min": 120.0,
+      "time_weight": 1.0
+    }
+  },
+  "routes": [
+    [
+      0,
+      15,
+      8,
+      1,
+      13,
+      11,
+      16,
+      3,
+      18,
+      6,
+      0
+    ],
+    [
+      0,
+      2,
+      5,
+      10,
+      19,
+      14,
+      4,
+      0
+    ],
+    [
+      0,
+      17,
+      20,
+      12,
+      7,
+      9,
+      0
+    ]
+  ],
+  "metrics": {
+    "total_cost": 5722.25,
+    "vehicles_used": 3,
+    "total_distance_km": 1291.25,
+    "waiting_total": 578.6700000000001,
+    "lateness_P_sum": 0.0,
+    "horizon_excess_E": 0.0,
+    "vehicle_cost": 2700.0,
+    "cost_distance": 1291.25,
+    "cost_penalty_late": 0.0,
+    "cost_penalty_horizon": 0.0,
+    "makespan_E": 596.1400000000001,
+    "sum_route_time_E": 1731.0000000000002,
+    "avg_route_time_E": 577.0000000000001,
+    "total_service_time": 0.0,
+    "cost_time": 1731.0000000000002
+  }
+}
