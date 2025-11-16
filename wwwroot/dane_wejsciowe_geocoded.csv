@@ -1,4 +1,8 @@
 ﻿Typ,Ulica,Numer,Miasto,KodPocztowy,OknoCzasoweOd,OknoCzasoweDo,Lat,Lon
-Magazyn,Puławska,2,Warszawa,02-566,,,52.2126673,21.0197383
+Magazyn,Puławska,2,Warszawa,02-566,,,52.2126564,21.0197502
 PunktDostawy,Floriańska,15,Kraków,31-019,08:00,09:00,50.0627426,19.9398622
 PunktDostawy,Święty Marcin,10,Poznań,61-803,09:30,10:30,52.4060391,16.9293623
+PunktDostawy,Piłsudskiego,5,Wrocław,50-033,11:00,12:00,51.1063316,17.0211178
+PunktDostawy,Piotrkowska,85,Łódź,90-423,13:00,14:00,51.7666167,19.4566331
+PunktDostawy,Monte Cassino,53,Sopot,81-759,15:00,16:00,54.4443759,18.5665949
+PunktDostawy,Staromiejska,13,Katowice,40-013,17:00,18:00,50.2583544,19.0236640

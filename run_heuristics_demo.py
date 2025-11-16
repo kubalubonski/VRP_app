@@ -36,7 +36,6 @@ from Algorithms.heuristic_insertion import greedy_insertion
 DAY_HORIZON = 600  # domyślny horyzont – nadpisywalny przez --day-horizon
 COST_PER_KM = 1.0
 VEHICLE_FIXED_COST = 900.0
-PENALTY_LATE_PER_MIN = 120.0
 PENALTY_HORIZON_PER_MIN = 120.0
 # Waga składnika czasowego (cost_time = TIME_WEIGHT * sum_route_time_E)
 TIME_WEIGHT = 1.0  # można łatwo zmienić w jednym miejscu
@@ -131,7 +130,6 @@ def main():
             service_time=args.service_time,
             cost_per_km=COST_PER_KM,
             vehicle_fixed_cost=VEHICLE_FIXED_COST,
-            penalty_late_per_min=PENALTY_LATE_PER_MIN,
             penalty_horizon_per_min=PENALTY_HORIZON_PER_MIN,
             time_weight=TIME_WEIGHT,
         )
@@ -144,7 +142,6 @@ def main():
             service_time=args.service_time,
             cost_per_km=COST_PER_KM,
             vehicle_fixed_cost=VEHICLE_FIXED_COST,
-            penalty_late_per_min=PENALTY_LATE_PER_MIN,
             penalty_horizon_per_min=PENALTY_HORIZON_PER_MIN,
             ignore_p_constraints=args.ignore_p,
             ignore_all_constraints=args.ignore_all,
@@ -155,7 +152,6 @@ def main():
             service_time=args.service_time,
             cost_per_km=COST_PER_KM,
             vehicle_fixed_cost=VEHICLE_FIXED_COST,
-            penalty_late_per_min=PENALTY_LATE_PER_MIN,
             penalty_horizon_per_min=PENALTY_HORIZON_PER_MIN,
             time_weight=TIME_WEIGHT,
         )
@@ -214,7 +210,6 @@ def main():
                 'cost_model': {
                     'cost_per_km': COST_PER_KM,
                     'vehicle_fixed_cost': VEHICLE_FIXED_COST,
-                    'penalty_late_per_min': PENALTY_LATE_PER_MIN,
                     'penalty_horizon_per_min': PENALTY_HORIZON_PER_MIN,
                     'time_weight': TIME_WEIGHT,
                 }

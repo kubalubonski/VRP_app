@@ -36,8 +36,7 @@ def main():
     service_time = 0.0
     cost_per_km = 1.0
     vehicle_fixed_cost = 900.0
-    penalty_late = 120.0
-    penalty_horizon = 120.0
+    penalty_horizon = 120.0  # tylko horyzont; spóźnienia wyeliminowane filtrem
     t_min = args.t_min
 
     summary_file = args.summary
@@ -105,8 +104,7 @@ def main():
         service_time=service_time,
         cost_per_km=cost_per_km,
         vehicle_fixed_cost=vehicle_fixed_cost,
-        penalty_late_per_min=penalty_late,
-        penalty_horizon_per_min=penalty_horizon,
+    penalty_horizon_per_min=penalty_horizon,
         t_max=args.t_max,
         t_min=t_min,
         alpha=args.alpha,
@@ -122,12 +120,14 @@ def main():
     for r in best_routes:
         print('  ', r)
     print('Rejected (horizon) moves:', stats.get('rejected_horizon'))
+    print('Rejected (window E) moves:', stats.get('rejected_window_E'))
+    print('Rejected (window P) moves:', stats.get('rejected_window_P'))
     init_m = stats.get('initial_metrics') or {}
     best_m = stats.get('best_metrics') or {}
     # Podstawowy zestaw kluczy (minimalny do analizy i prezentacji)
     key_list = [
         'vehicles_used', 'total_distance_km', 'cost_distance', 'cost_time', 'vehicle_cost',
-        'waiting_E', 'lateness_P_sum', 'horizon_excess_E', 'makespan_E', 'sum_route_time_E', 'avg_route_time_E'
+    'waiting_E', 'horizon_excess_E', 'makespan_E', 'sum_route_time_E', 'avg_route_time_E'
     ]
     print('\nMetrics change (initial -> best | delta):')
     for k in key_list:
@@ -178,6 +178,8 @@ def main():
                 'accepted_moves': stats.get('accepted_moves'),
                 'improving_moves': stats.get('improving_moves'),
                 'rejected_horizon_moves': stats.get('rejected_horizon'),
+                'rejected_window_E_moves': stats.get('rejected_window_E'),
+                'rejected_window_P_moves': stats.get('rejected_window_P'),
                 'rejected_horizon_rate': (stats.get('rejected_horizon')/stats.get('total_attempts')) if stats.get('total_attempts') else None,
             },
             'trace_improvements': improvement_trace,

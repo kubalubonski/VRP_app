@@ -1,53 +1,71 @@
-"""Minimalny Simulated Annealing dla VRP bazujący na już istniejących:
-- koszt: calculate_vrp_cost_local_robust
-- macierze: vrp_common_utilities (expected/pessimistic)
-- rozwiązanie początkowe: parsowane z pliku summary_* (sekcja routes)
-Ten moduł NIE posiada już CLI – patrz plik run_sa.py do uruchamiania z linii komend.
-
-Sąsiedztwa dostępne przez simulated_annealing():
-    swap | relocate | two_opt | mixed
+"""Simulated Annealing dla VRP
+Minimalna implementacja:
+ - Propagacja tylko expected (E), arrival_P punktowo.
+ - Twarde okna dla E i P; horyzont dnia na osi E.
+ - Koszt: dystans + koszt pojazdów + kara horyzontu + (opcjonalnie) komponent czasu.
+ - Sąsiedztwa: swap | relocate | two_opt | mixed.
 """
 from __future__ import annotations
-import random, math, copy, os
-from typing import List, Dict, Optional
-import json
+import random, math, copy, os, json
+from typing import List, Dict, Optional, Tuple
 
 import numpy as np
 
 from .robust_cost import calculate_vrp_cost_local_robust
-from .vrp_common_utilities import load_epo_times, get_epo_matrices, load_time_windows  # pozostawione dla kompatybilności (może użyte w wyższej warstwie)
+from .vrp_common_utilities import load_epo_times, get_epo_matrices, load_time_windows
+from .common_feasibility import route_feasible_ep_classified
 
-# ---------------- Parsing rozwiązania początkowego -----------------
+# ---------------- Parsowanie tras (unifikacja JSON / summary) -----------------
 
-def parse_summary_routes(path: str) -> List[List[int]]:
+def load_routes_generic(path: str) -> Tuple[List[List[int]], Optional[Dict]]:
+    """Załaduj trasy z pliku summary_*.txt (sekcja routes=) lub z pliku JSON.
+
+    Zwraca tuple (routes, meta_dict). Dla pliku summary meta_dict == None.
+    Normalizuje każdą trasę tak, aby zaczynała i kończyła się 0 (depot).
+    """
     if not os.path.isfile(path):
         raise FileNotFoundError(path)
+    _, ext = os.path.splitext(path.lower())
     routes: List[List[int]] = []
-    with open(path, 'r', encoding='utf-8') as f:
-        lines = [l.strip() for l in f if l.strip()]
-    try:
-        idx = lines.index('routes=')
-    except ValueError:
-        raise ValueError("Brak sekcji 'routes=' w pliku summary")
-    for line in lines[idx+1:]:
-        if line.startswith('#'):  # ewentualne komentarze
-            continue
-        parts = [p.strip() for p in line.split(',') if p.strip()]
-        if not parts:
-            continue
-        ints = [int(p) for p in parts]
-        # Upewniamy się, że start/end depot=0
-        if ints[0] != 0:
-            ints = [0] + ints
-        if ints[-1] != 0:
-            ints.append(0)
-        routes.append(ints)
-    return routes
+    meta: Optional[Dict] = None
+    if ext == '.json':
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        meta = data
+        if 'routes' not in data:
+            raise ValueError('Brak klucza routes w JSON')
+        for r in data['routes']:
+            if not r:
+                continue
+            if r[0] != 0:
+                r = [0] + r
+            if r[-1] != 0:
+                r = r + [0]
+            routes.append(r)
+    else:
+        with open(path, 'r', encoding='utf-8') as f:
+            lines = [l.strip() for l in f if l.strip()]
+        if 'routes=' not in lines:
+            raise ValueError("Brak sekcji 'routes=' w pliku summary")
+        start = lines.index('routes=') + 1
+        for line in lines[start:]:
+            if line.startswith('#'):
+                continue
+            parts = [p for p in line.split(',') if p.strip()]
+            if not parts:
+                continue
+            ints = [int(p) for p in parts]
+            if ints[0] != 0:
+                ints.insert(0, 0)
+            if ints[-1] != 0:
+                ints.append(0)
+            routes.append(ints)
+    return routes, meta
 
 
 # ---------------- Operatory sąsiedztwa -----------------
 
-def neighborhood_swap(sol: List[List[int]]):
+def neighborhood_swap(sol: List[List[int]]) -> Optional[List[List[int]]]:
     # Zbierz wszystkie (route_index, pos) dla klientów (bez depotów)
     positions = [(ri, pi) for ri, r in enumerate(sol) for pi in range(1, len(r)-1)]
     if len(positions) < 2:
@@ -57,7 +75,7 @@ def neighborhood_swap(sol: List[List[int]]):
     new_sol[r1][p1], new_sol[r2][p2] = new_sol[r2][p2], new_sol[r1][p1]
     return new_sol
 
-def neighborhood_relocate(sol: List[List[int]]):
+def neighborhood_relocate(sol: List[List[int]]) -> Optional[List[List[int]]]:
     routes_non_empty = [ri for ri, r in enumerate(sol) if len(r) > 2]
     if not routes_non_empty:
         return None
@@ -90,7 +108,7 @@ def neighborhood_relocate(sol: List[List[int]]):
     insert_route.insert(insert_pos, client)
     return new_sol
 
-def neighborhood_two_opt(sol: List[List[int]]):
+def neighborhood_two_opt(sol: List[List[int]]) -> Optional[List[List[int]]]:
     candidate_routes = [ri for ri, r in enumerate(sol) if len(r) > 4]
     if not candidate_routes:
         return None
@@ -113,176 +131,182 @@ NEIGH_FUN = {
 # ---------------- SA core -----------------
 
 def compute_cost(routes: List[List[int]], matrices, time_windows, day_horizon, service_time,
-                 cost_per_km, vehicle_fixed_cost, penalty_late_per_min, penalty_horizon_per_min,
-                 time_weight: float = 1.0):
-    c, metrics = calculate_vrp_cost_local_robust(
+                 cost_per_km, vehicle_fixed_cost, penalty_horizon_per_min,
+                 time_weight: float = 1.0) -> Tuple[float, Dict]:
+    """Wrapper dla `calculate_vrp_cost_local_robust`.
+    
+    `penalty_late_per_min` jest celowo pominięty i zerowany w SA, ponieważ
+    filtr E/P (twarde okna) eliminuje spóźnienia.
+    """
+    cost, metrics = calculate_vrp_cost_local_robust(
         routes, matrices, time_windows,
         day_horizon=day_horizon,
         service_time=service_time,
-    cost_per_km=cost_per_km,
-    vehicle_fixed_cost=vehicle_fixed_cost,
-    penalty_late_per_min=penalty_late_per_min,
-    penalty_horizon_per_min=penalty_horizon_per_min,
-    time_weight=time_weight,
+        cost_per_km=cost_per_km,
+        vehicle_fixed_cost=vehicle_fixed_cost,
+        penalty_horizon_per_min=penalty_horizon_per_min,
+        time_weight=time_weight,
     )
-    return c, metrics
-
-
-def _feasible_horizon(routes: List[List[int]], time_E: np.ndarray, day_horizon: int, service_time: float = 0.0) -> bool:
-    """Szybkie sprawdzenie czy żadna trasa nie przekracza day_horizon na osi expected.
-    Uproszczenie: czas = suma travel_E (+ service_time jeśli >0).
-    """
-    for r in routes:
-        if len(r) <= 2:
-            continue
-        t = 0.0
-        for i in range(len(r) - 1):
-            a = r[i]; b = r[i+1]
-            t += time_E[a, b]
-            if b != 0 and service_time > 0:
-                t += service_time
-            if t > day_horizon:
-                return False
-    return True
+    return cost, metrics
 
 
 def simulated_annealing(initial_routes: List[List[int]], matrices: Dict[str, np.ndarray],
                         time_windows: Optional[Dict[int, tuple]] = None,
                         day_horizon: int = 600, service_time: float = 0.0,
                         cost_per_km: float = 1.0, vehicle_fixed_cost: float = 900.0,
-                        penalty_late_per_min: float = 120.0, penalty_horizon_per_min: float = 120.0,
+                        penalty_horizon_per_min: float = 120.0,
                         time_weight: float = 1.0,
                         t_max: float = 1000.0, t_min: float = 1.0, alpha: float = 0.95,
                         iters_per_T: int = 500, neighborhood: str = 'mixed', seed: Optional[int] = None):
     if seed is not None:
         random.seed(seed)
         np.random.seed(seed)
+
     current = copy.deepcopy(initial_routes)
     best = copy.deepcopy(initial_routes)
+    # Kara za spóźnienia (lateness) jest zerowana, ponieważ filtr E/P i twarde okna
+    # uniemożliwiają generowanie niedopuszczalnych (spóźnionych) rozwiązań.
     current_cost, current_metrics = compute_cost(current, matrices, time_windows, day_horizon, service_time,
-                                                 cost_per_km, vehicle_fixed_cost, penalty_late_per_min, penalty_horizon_per_min,
+                                                 cost_per_km, vehicle_fixed_cost, penalty_horizon_per_min,
                                                  time_weight=time_weight)
+    # Zachowaj koszt startowy przed jakąkolwiek poprawą – potrzebny do poprawnego wyliczenia improvement_pct
+    initial_cost = current_cost
     best_cost = current_cost
     best_metrics = current_metrics
+
     T = t_max
     neigh_keys = list(NEIGH_FUN.keys()) if neighborhood == 'mixed' else [neighborhood]
+    
+    # Statystyki odrzuceń
     rejected_horizon = 0
+    rejected_window_E = 0
+    rejected_window_P = 0
+    rejected_window_both = 0
+    
     time_E = matrices['expected']
+    time_P = matrices['pessimistic']
 
     epoch = 0
     accepted_moves = 0
     improving_moves = 0
-    trace = []  # list of (epoch, T, best_cost)
+    trace: List[Tuple[int, float, float]] = []
     total_attempts = 0
+
     while T > t_min:
         for _ in range(iters_per_T):
-            op = random.choice(neigh_keys)
-            neighbor_fun = NEIGH_FUN[op]
-            candidate = neighbor_fun(current)
+            total_attempts += 1
+            neigh_key = random.choice(neigh_keys)
+            candidate = NEIGH_FUN[neigh_key](current)
             if candidate is None:
                 continue
-            # Hard reject horyzontu (tylko expected). Okna czasowe dalej = kary, nie odrzucamy.
-            if not _feasible_horizon(candidate, time_E, day_horizon, service_time):
-                rejected_horizon += 1
+
+            # Weryfikacja dopuszczalności – wszystkie trasy muszą być OK
+            is_feasible = True
+            cand_vio_E, cand_vio_P, cand_vio_both = False, False, False
+            
+            for r in candidate:
+                ok, vio_E, vio_P, vio_both = route_feasible_ep_classified(
+                    r, time_E, time_P, time_windows, day_horizon, service_time
+                )
+                if not ok:
+                    is_feasible = False
+                    # Agreguj flagi naruszeń z poszczególnych tras
+                    if vio_E: cand_vio_E = True
+                    if vio_P: cand_vio_P = True
+                    if vio_both: cand_vio_both = True
+            
+            if not is_feasible:
+                # Zliczanie typów naruszeń dla celów analitycznych
+                if cand_vio_E: rejected_window_E += 1
+                if cand_vio_P: rejected_window_P += 1
+                if cand_vio_both: rejected_window_both += 1
+                # Horyzont jest sprawdzany wewnątrz `route_feasible_ep_classified`,
+                # więc jego naruszenie również ustawi `cand_vio_E` na True.
+                # Dla uproszczenia nie tworzymy osobnego licznika, gdyż jest to podkategoria `vio_E`.
                 continue
-            total_attempts += 1
-            cand_cost, cand_metrics = compute_cost(candidate, matrices, time_windows, day_horizon, service_time,
-                                                   cost_per_km, vehicle_fixed_cost, penalty_late_per_min, penalty_horizon_per_min,
-                                                   time_weight=time_weight)
+
+            cand_cost, _ = compute_cost(candidate, matrices, time_windows, day_horizon, service_time,
+                                        cost_per_km, vehicle_fixed_cost, penalty_horizon_per_min,
+                                        time_weight=time_weight)
+            
             delta = cand_cost - current_cost
-            if delta < 0 or math.exp(-delta / T) > random.random():
+            if delta < 0:
                 current = candidate
                 current_cost = cand_cost
-                current_metrics = cand_metrics
-                if current_cost < best_cost:
-                    best = copy.deepcopy(current)
-                    best_cost = current_cost
-                    best_metrics = cand_metrics
+                improving_moves += 1
                 accepted_moves += 1
-                if delta < 0:
-                    improving_moves += 1
-        # Drukuj postęp co 10 epok
-        if epoch % 10 == 0:
-            print(f"[SA] Epoka {epoch:4d} | T={T:.2f} | koszt={current_cost:.2f} | pojazdy={len(current)} | best={best_cost:.2f}")
+                if cand_cost < best_cost:
+                    best = candidate
+                    best_cost = cand_cost
+                    # Metryki liczymy tylko dla najlepszego rozwiązania, aby oszczędzić czas
+                    _, best_metrics = compute_cost(best, matrices, time_windows, day_horizon, service_time,
+                                                   cost_per_km, vehicle_fixed_cost, penalty_horizon_per_min,
+                                                   time_weight=time_weight)
+            elif math.exp(-delta / T) > random.random():
+                current = candidate
+                current_cost = cand_cost
+                accepted_moves += 1
+        
         trace.append((epoch, T, best_cost))
-        epoch += 1
         T *= alpha
-    # Możemy zwrócić także statystyki – na razie jako drugi element koszt, trzeci dict.
+        epoch += 1
+
     stats = {
-        'rejected_horizon': rejected_horizon,
+        'initial_cost': initial_cost,
+        'initial_metrics': current_metrics,  # Metryki startowe
+        'rejected_horizon': rejected_horizon, # Ten licznik jest już nieużywany, ale zostaje dla API
         'accepted_moves': accepted_moves,
         'improving_moves': improving_moves,
         'total_attempts': total_attempts,
         'epochs': epoch,
         'trace': trace,
-        'initial_metrics': current_metrics if best is None else None,  # placeholder (nadpisany niżej),
         'best_metrics': best_metrics,
+        'rejected_window_E': rejected_window_E,
+        'rejected_window_P': rejected_window_P,
+        'rejected_window_both': rejected_window_both,
     }
-    # initial metrics = metrics of initial_routes (we stored earlier as best_metrics when created)
-    stats['initial_metrics'] = current_metrics  # current_metrics here is last accepted, need explicit store earlier
-    # Better: store initial separately
-    stats['initial_metrics'] = best_metrics if best == initial_routes else best_metrics  # fallback
-    # For clarity we will recompute initial explicitly outside in run_sa_core; simpler: return both
-    return best, best_cost, stats, current_metrics, best_metrics
+    return best, best_cost, stats
 
 # Helper dla zewnętrznego runnera (run_sa.py)
-def load_routes_json(path: str) -> List[List[int]]:
-    if not os.path.isfile(path):
-        raise FileNotFoundError(path)
-    with open(path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    if 'routes' not in data:
-        raise ValueError('Brak klucza routes w JSON')
-    routes = []
-    for r in data['routes']:
-        if not r:
-            continue
-        if r[0] != 0:
-            r = [0] + r
-        if r[-1] != 0:
-            r = r + [0]
-        routes.append(r)
-    return routes, data
+def load_routes_json(path: str) -> List[List[int]]:  # zachowujemy dla kompatybilności zewnętrznych importów
+    routes, meta = load_routes_generic(path)
+    return routes, (meta or {})
 
 def run_sa_core(summary_file: Optional[str], epo_times: Optional[str], time_windows_file: Optional[str] = None,
                 routes_json: Optional[str] = None, matrices_override=None, time_windows_override=None, **sa_kwargs):
     meta_json = None
     if routes_json:
-        routes, meta_json = load_routes_json(routes_json)
-        # Nadpisanie day_horizon / service_time jeśli występują
-        params = (meta_json or {}).get('parameters', {})
-        if 'day_horizon' in params and 'day_horizon' not in sa_kwargs:
-            sa_kwargs['day_horizon'] = params['day_horizon']
-        if 'service_time' in params and 'service_time' not in sa_kwargs:
-            sa_kwargs['service_time'] = params['service_time']
+        # 1. Preferuj plik JSON z trasami (wynik heurystyki)
+        routes, meta_json = load_routes_generic(routes_json)
+        if not routes:
+            raise SystemExit(f"Błąd: Plik JSON '{routes_json}' nie zawiera tras lub jest pusty.")
+    elif summary_file:
+        # 2. Alternatywnie, użyj pliku summary (starszy format)
+        routes, _ = load_routes_generic(summary_file)
+        if not routes:
+            raise SystemExit(f"Błąd: Plik summary '{summary_file}' nie zawiera tras.")
     else:
-        routes = parse_summary_routes(summary_file)
+        raise SystemExit("Błąd: Nie podano źródła tras (ani --routes-json, ani --summary).")
+
     if matrices_override is not None:
         matrices = matrices_override
     else:
-        times_df = load_epo_times(epo_times)
-        matrices = get_epo_matrices(times_df)
+        # Jeśli nie ma nadpisania, buduj z EPO
+        epo_df = load_epo_times(epo_times)
+        matrices = get_epo_matrices(epo_df)
+
     if time_windows_override is not None:
         time_windows = time_windows_override
     else:
-        if time_windows_file:
-            time_windows, _ = load_time_windows(time_windows_file)
+        # Jeśli nie ma nadpisania, buduj z pliku (wymaga `time_windows_file`)
+        if not time_windows_file:
+            # Domyślnie brak okien, jeśli nie podano pliku
+            time_windows = {}
         else:
-            try:
-                time_windows, _ = load_time_windows()
-            except Exception:
-                time_windows = None
-    # Run SA
-    best, best_cost, stats, last_curr_metrics, best_metrics = simulated_annealing(routes, matrices, time_windows=time_windows, **sa_kwargs)
-    # Recompute initial metrics cleanly
-    init_cost, init_metrics = compute_cost(routes, matrices, time_windows,
-                                           sa_kwargs.get('day_horizon', 600),
-                                           sa_kwargs.get('service_time', 0.0),
-                                           sa_kwargs.get('cost_per_km', 1.0),
-                                           sa_kwargs.get('vehicle_fixed_cost', 900.0),
-                                           sa_kwargs.get('penalty_late_per_min', 120.0),
-                                           sa_kwargs.get('penalty_horizon_per_min', 120.0),
-                                           time_weight=sa_kwargs.get('time_weight', 1.0))
-    stats['initial_metrics'] = init_metrics
-    stats['best_metrics'] = best_metrics
+            time_windows, _ = load_time_windows(time_windows_file)
+
+    # Uruchomienie SA z przekazaniem wszystkich pozostałych argumentów
+    best, best_cost, stats = simulated_annealing(routes, matrices, time_windows=time_windows, **sa_kwargs)
+
+    # Zwróć komplet wyników, w tym trasy początkowe dla porównania
     return routes, best, best_cost, stats

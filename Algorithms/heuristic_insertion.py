@@ -1,5 +1,13 @@
-"""Greedy Insertion Heuristic (separate module)
-Buduje rozwiązanie iteracyjnie: losowy start => wstawki minimalizujące przyrost kosztu.
+"""Greedy Insertion Heuristic
+Buduje rozwiązanie iteracyjnie: start od jednego klienta i kolejne wstawki
+minimalizujące przyrost kosztu globalnego.
+
+Model dualny okien (E/P): dla kroku i->j bazujemy na osi expected (E):
+    A_j^E = B_i^E + t_{ij}^E
+    A_j^P = B_i^E + t_{ij}^P
+    B_j^S = max(A_j^S, a_j)
+Akceptacja gdy B_j^E ≤ b_j oraz (o ile kontrolujemy P) B_j^P ≤ b_j.
+Propagujemy wyłącznie B_j^E. P jest używany punktowo do weryfikacji okna.
 """
 from typing import Dict, List, Optional, Tuple
 from datetime import datetime
@@ -7,27 +15,13 @@ import random as rd
 import numpy as np
 
 from .robust_cost import calculate_vrp_cost_local_robust
+from .common_feasibility import route_feasible_ep
 
 
-def _route_feasible_p(route: List[int], time_P: np.ndarray, time_windows, day_horizon: int) -> bool:
-    base_dt = datetime.strptime("08:00", "%H:%M")
-    timeline_P = 0.0
-    for i in range(len(route) - 1):
-        a = route[i]; b = route[i+1]
-        travel_P = time_P[a, b]
-        arrival_P = timeline_P + travel_P
-        if time_windows and b in time_windows and time_windows[b]:
-            ws, we = time_windows[b]
-            ws_min = (datetime.combine(base_dt.date(), ws) - base_dt).seconds / 60
-            we_min = (datetime.combine(base_dt.date(), we) - base_dt).seconds / 60
-            if arrival_P > we_min:
-                return False
-            if arrival_P < ws_min:
-                arrival_P = ws_min
-        timeline_P = arrival_P  # service_time==0 (upraszczamy)
-        if timeline_P > day_horizon:
-            return False
-    return True
+def _local_feasible(route: List[int], time_E, time_P, time_windows, day_horizon, service_time, ignore_all_constraints):
+    if ignore_all_constraints:
+        return True
+    return route_feasible_ep(route, time_E, time_P, time_windows, day_horizon, service_time)
 
 
 def greedy_insertion(
@@ -37,11 +31,10 @@ def greedy_insertion(
     service_time: float = 0.0,
     cost_per_km: float = 1.0,
     vehicle_fixed_cost: float = 900.0,
-    penalty_late_per_min: float = 120.0,
     penalty_horizon_per_min: float = 120.0,
-    ignore_p_constraints: bool = False,
     ignore_all_constraints: bool = False,
-) -> List[List[int]]:
+        ) -> List[List[int]]:
+
     time_E = matrices['expected']
     time_P = matrices['pessimistic']
     n = time_E.shape[0]
@@ -49,77 +42,65 @@ def greedy_insertion(
     if not customers:
         return [[0,0]]
 
+    # Losowa kolejność klientów wprowadza element stochastyczny
     rd.shuffle(customers)
-    # Start with single route with first customer
-    first = customers.pop()
-    routes: List[List[int]] = [[0, first, 0]]
+    
+    # Inicjalizacja: pierwsza trasa z losowym klientem
+    first_customer = customers.pop()
+    routes: List[List[int]] = [[0, first_customer, 0]]
 
-    def evaluate(solution: List[List[int]]):
-        c, _ = calculate_vrp_cost_local_robust(
+    def evaluate(solution: List[List[int]]) -> float:
+        """Funkcja pomocnicza do oceny kosztu danego rozwiązania."""
+        cost, _ = calculate_vrp_cost_local_robust(
             solution, matrices, time_windows,
             day_horizon=day_horizon,
             service_time=service_time,
             cost_per_km=cost_per_km,
             vehicle_fixed_cost=vehicle_fixed_cost,
-            penalty_late_per_min=penalty_late_per_min,
             penalty_horizon_per_min=penalty_horizon_per_min,
         )
-        return c
+        return cost
 
     while customers:
-        client = customers.pop()
-        best_delta = None
-        best_solution = None
-        baseline_cost = evaluate(routes)  # cache
-
-        # Insert into existing routes
+        client_to_insert = customers.pop()
+        best_insertion_cost = float('inf')
+        best_solution_after_insertion = None
+        
+        # Krok 1: Znajdź najlepsze miejsce wstawienia w istniejących trasach
         for r_idx, route in enumerate(routes):
-            for pos in range(1, len(route)):  # przed ostatnim depo
-                new_route = route[:pos] + [client] + route[pos:]
-                if ignore_all_constraints:
-                    pass  # żadnych filtrów
-                elif ignore_p_constraints:
-                    if sum(time_P[new_route[i], new_route[i+1]] for i in range(len(new_route)-1)) > day_horizon:
-                        continue
-                else:
-                    if not _route_feasible_p(new_route, time_P, time_windows, day_horizon):
-                        continue
-                candidate = routes.copy()
-                candidate[r_idx] = new_route
-                cost_new = evaluate(candidate)
-                delta = cost_new - baseline_cost
-                if best_delta is None or delta < best_delta:
-                    best_delta = delta
-                    best_solution = candidate
+            for pos in range(1, len(route)):
+                # Utwórz kandydacką trasę przez wstawienie klienta
+                new_route = route[:pos] + [client_to_insert] + route[pos:]
+                
+                # Sprawdź dopuszczalność tylko zmodyfikowanej trasy
+                if not route_feasible_ep(new_route, time_E, time_P, time_windows, day_horizon, service_time):
+                    continue
+                
+                # Oceń koszt całego nowego rozwiązania
+                candidate_solution = routes[:r_idx] + [new_route] + routes[r_idx+1:]
+                new_cost = evaluate(candidate_solution)
 
-        # Nowa trasa jako fallback
-        new_route = [0, client, 0]
-        if ignore_all_constraints:
-            candidate = routes + [new_route]
-            cost_new = evaluate(candidate)
-            delta = cost_new - baseline_cost
-            if best_delta is None or delta < best_delta:
-                best_delta = delta
-                best_solution = candidate
-        elif ignore_p_constraints:
-            if sum(time_P[new_route[i], new_route[i+1]] for i in range(len(new_route)-1)) <= day_horizon:
-                candidate = routes + [new_route]
-                cost_new = evaluate(candidate)
-                delta = cost_new - baseline_cost
-                if best_delta is None or delta < best_delta:
-                    best_delta = delta
-                    best_solution = candidate
-        elif _route_feasible_p(new_route, time_P, time_windows, day_horizon):
-            candidate = routes + [new_route]
-            cost_new = evaluate(candidate)
-            delta = cost_new - baseline_cost
-            if best_delta is None or delta < best_delta:
-                best_delta = delta
-                best_solution = candidate
+                if new_cost < best_insertion_cost:
+                    best_insertion_cost = new_cost
+                    best_solution_after_insertion = candidate_solution
 
-        if best_solution is None:
-            routes.append([0, client, 0])  # ostateczność
+        # Krok 2: Rozważ utworzenie nowej trasy dla klienta
+        new_route_for_client = [0, client_to_insert, 0]
+        if route_feasible_ep(new_route_for_client, time_E, time_P, time_windows, day_horizon, service_time):
+            candidate_solution = routes + [new_route_for_client]
+            new_cost = evaluate(candidate_solution)
+            
+            if new_cost < best_insertion_cost:
+                best_insertion_cost = new_cost
+                best_solution_after_insertion = candidate_solution
+
+        # Krok 3: Zaktualizuj rozwiązanie
+        if best_solution_after_insertion is not None:
+            routes = best_solution_after_insertion
         else:
-            routes = best_solution
+            # Jeśli nigdzie nie dało się wstawić klienta (bardzo restrykcyjne okna),
+            # dodaj go w osobnej, potencjalnie niedopuszczalnej trasie.
+            # Taki przypadek jest mało prawdopodobny przy poprawnych danych.
+            routes.append([0, client_to_insert, 0])
 
     return routes

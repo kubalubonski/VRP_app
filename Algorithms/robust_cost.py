@@ -14,15 +14,14 @@ def calculate_vrp_cost_local_robust(
     # Nowy model kosztu – parametry literaturowe
     cost_per_km: float = 1.0,
     vehicle_fixed_cost: float = 900.0,
-    penalty_late_per_min: float = 120.0,
     penalty_horizon_per_min: float = 120.0,
     time_weight: float = 1.0,
 ):
     """Nowa funkcja kosztu (literatura VRPTW).
 
-    Całkowity koszt:
+    Całkowity koszt (bez komponentu spóźnień – okna twarde):
         C = cost_per_km * (suma_dystansu_km) + vehicle_fixed_cost * K
-            + penalty_late_per_min * (suma spóźnień) + penalty_horizon_per_min * (suma przekroczeń horyzontu)
+            + penalty_horizon_per_min * (suma przekroczeń horyzontu)
 
     Uwagi:
     - Zachowujemy obliczanie waiting time jako METRYKĘ diagnostyczną, ale nie wpływa ona na koszt.
@@ -37,6 +36,7 @@ def calculate_vrp_cost_local_robust(
 
     total_distance_km = 0.0
     total_wait_E = 0.0  # tylko diagnostyka
+    # Lateness usunięte – okna P twarde, brak akumulacji
     total_lateness_P = 0.0
     horizon_excess = 0.0
 
@@ -82,8 +82,7 @@ def calculate_vrp_cost_local_robust(
                 total_wait_E += wait_E
                 route_wait_E += wait_E
 
-                lateness_P = max(0.0, arrival_P - we_minutes)
-                total_lateness_P += lateness_P
+                # Brak obliczania lateness – naruszenia P odrzucane wcześniej
 
                 start_service_E = max(arrival_E, ws_minutes)
                 start_service_P = max(arrival_P, ws_minutes)
@@ -113,33 +112,23 @@ def calculate_vrp_cost_local_robust(
     vehicle_cost = vehicle_fixed_cost * k_used
 
     cost_distance = cost_per_km * total_distance_km
-    cost_late = penalty_late_per_min * total_lateness_P
     cost_horizon = penalty_horizon_per_min * horizon_excess
     # Suma czasów zakończenia tras (proxy wysiłku floty) jest obliczona poniżej jako sum_route_time_E.
-    # Waga time_weight umożliwia włączenie / wyłączenie wpływu tego składnika (domyślnie 1.0 zgodnie z prośbą użytkownika).
-
-    total_cost = cost_distance + vehicle_cost + cost_late + cost_horizon
-
-    total_customer_visits = sum(max(len(r) - 2, 0) for r in vrp_solution)
-    total_service_time = service_time * total_customer_visits
-
-    # Obliczenia zależne od końców tras (po wstępnym total_cost aby mieć metryki)
-    sum_route_time_E = sum(route_end_times_E) if route_end_times_E else 0.0
-    avg_route_time_E = (sum_route_time_E/len(route_end_times_E)) if route_end_times_E else 0.0
+    # Waga `time_weight` umożliwia włączenie/wyłączenie wpływu sumy czasów zakończenia tras
+    # na funkcję celu. Domyślnie (1.0) jest to aktywny składnik kosztu.
     cost_time = time_weight * sum_route_time_E
     total_cost += cost_time
-
     metrics = {
         'total_distance_km': total_distance_km,
         'waiting_E': total_wait_E,
         # Alias bardziej intuicyjny dla zewnętrznych raportów / CSV
         'waiting_total': total_wait_E,
-        'lateness_P_sum': total_lateness_P,
+    'lateness_P_sum': 0.0,
         'horizon_excess_E': horizon_excess,
         'vehicle_cost': vehicle_cost,
         'vehicles_used': k_used,
         'cost_distance': cost_distance,
-        'cost_penalty_late': cost_late,
+    'cost_penalty_late': 0.0,
         'cost_penalty_horizon': cost_horizon,
         'cost_time': cost_time,
         'w_time': time_weight,

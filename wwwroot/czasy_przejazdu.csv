@@ -1,7 +1,42 @@
 StartIdx,EndIdx,StartTyp,EndTyp,StartUlica,StartMiasto,EndUlica,EndMiasto,DeliveryTimeWindow,Distance_km,Duration_time
-0,1,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Kraków,08:00-09:00,294.61,184.4
-0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Poznań,09:30-10:30,309.62,180.79
-1,0,PunktDostawy,Magazyn,Floriańska,Kraków,Puławska,Warszawa,,293.17,183.57
-1,2,PunktDostawy,PunktDostawy,Floriańska,Kraków,Święty Marcin,Poznań,09:30-10:30,462.61,274.7
-2,0,PunktDostawy,Magazyn,Święty Marcin,Poznań,Puławska,Warszawa,,314.12,184.51
-2,1,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Floriańska,Kraków,08:00-09:00,465.11,277.5
+0,1,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Kraków,08:00-09:00,294.61,184.5
+0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Poznań,09:30-10:30,309.62,180.67
+0,3,Magazyn,PunktDostawy,Puławska,Warszawa,Piłsudskiego,Wrocław,11:00-12:00,354.6,217.0
+0,4,Magazyn,PunktDostawy,Puławska,Warszawa,Piotrkowska,Łódź,13:00-14:00,129.12,95.29
+0,5,Magazyn,PunktDostawy,Puławska,Warszawa,Monte Cassino,Sopot,15:00-16:00,435.05,247.09
+0,6,Magazyn,PunktDostawy,Puławska,Warszawa,Staromiejska,Katowice,17:00-18:00,317.51,188.24
+1,0,PunktDostawy,Magazyn,Floriańska,Kraków,Puławska,Warszawa,,293.16,183.44
+1,2,PunktDostawy,PunktDostawy,Floriańska,Kraków,Święty Marcin,Poznań,09:30-10:30,462.6,275.04
+1,3,PunktDostawy,PunktDostawy,Floriańska,Kraków,Piłsudskiego,Wrocław,11:00-12:00,274.7,169.87
+1,4,PunktDostawy,PunktDostawy,Floriańska,Kraków,Piotrkowska,Łódź,13:00-14:00,284.26,172.91
+1,5,PunktDostawy,PunktDostawy,Floriańska,Kraków,Monte Cassino,Sopot,15:00-16:00,618.23,341.98
+1,6,PunktDostawy,PunktDostawy,Floriańska,Kraków,Staromiejska,Katowice,17:00-18:00,83.72,63.3
+2,0,PunktDostawy,Magazyn,Święty Marcin,Poznań,Puławska,Warszawa,,314.11,184.51
+2,1,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Floriańska,Kraków,08:00-09:00,465.11,277.69
+2,3,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Piłsudskiego,Wrocław,11:00-12:00,183.67,129.21
+2,4,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Piotrkowska,Łódź,13:00-14:00,210.37,139.32
+2,5,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Monte Cassino,Sopot,15:00-16:00,330.14,211.78
+2,6,PunktDostawy,PunktDostawy,Święty Marcin,Poznań,Staromiejska,Katowice,17:00-18:00,384.88,227.35
+3,0,PunktDostawy,Magazyn,Piłsudskiego,Wrocław,Puławska,Warszawa,,357.23,217.81
+3,1,PunktDostawy,PunktDostawy,Piłsudskiego,Wrocław,Floriańska,Kraków,08:00-09:00,275.1,169.1
+3,2,PunktDostawy,PunktDostawy,Piłsudskiego,Wrocław,Święty Marcin,Poznań,09:30-10:30,182.63,126.55
+3,4,PunktDostawy,PunktDostawy,Piłsudskiego,Wrocław,Piotrkowska,Łódź,13:00-14:00,222.42,151.73
+3,5,PunktDostawy,PunktDostawy,Piłsudskiego,Wrocław,Monte Cassino,Sopot,15:00-16:00,501.16,304.94
+3,6,PunktDostawy,PunktDostawy,Piłsudskiego,Wrocław,Staromiejska,Katowice,17:00-18:00,194.86,118.76
+4,0,PunktDostawy,Magazyn,Piotrkowska,Łódź,Puławska,Warszawa,,140.15,96.97
+4,1,PunktDostawy,PunktDostawy,Piotrkowska,Łódź,Floriańska,Kraków,08:00-09:00,286.07,175.37
+4,2,PunktDostawy,PunktDostawy,Piotrkowska,Łódź,Święty Marcin,Poznań,09:30-10:30,208.47,134.35
+4,3,PunktDostawy,PunktDostawy,Piotrkowska,Łódź,Piłsudskiego,Wrocław,11:00-12:00,221.85,150.38
+4,5,PunktDostawy,PunktDostawy,Piotrkowska,Łódź,Monte Cassino,Sopot,15:00-16:00,356.81,209.59
+4,6,PunktDostawy,PunktDostawy,Piotrkowska,Łódź,Staromiejska,Katowice,17:00-18:00,227.49,134.31
+5,0,PunktDostawy,Magazyn,Monte Cassino,Sopot,Puławska,Warszawa,,439.52,251.07
+5,1,PunktDostawy,PunktDostawy,Monte Cassino,Sopot,Floriańska,Kraków,08:00-09:00,620.24,344.89
+5,2,PunktDostawy,PunktDostawy,Monte Cassino,Sopot,Święty Marcin,Poznań,09:30-10:30,328.17,207.81
+5,3,PunktDostawy,PunktDostawy,Monte Cassino,Sopot,Piłsudskiego,Wrocław,11:00-12:00,501.29,306.67
+5,4,PunktDostawy,PunktDostawy,Monte Cassino,Sopot,Piotrkowska,Łódź,13:00-14:00,356.28,209.29
+5,6,PunktDostawy,PunktDostawy,Monte Cassino,Sopot,Staromiejska,Katowice,17:00-18:00,561.65,303.83
+6,0,PunktDostawy,Magazyn,Staromiejska,Katowice,Puławska,Warszawa,,309.88,187.58
+6,1,PunktDostawy,PunktDostawy,Staromiejska,Katowice,Floriańska,Kraków,08:00-09:00,86.83,67.03
+6,2,PunktDostawy,PunktDostawy,Staromiejska,Katowice,Święty Marcin,Poznań,09:30-10:30,381.18,224.17
+6,3,PunktDostawy,PunktDostawy,Staromiejska,Katowice,Piłsudskiego,Wrocław,11:00-12:00,193.28,119.0
+6,4,PunktDostawy,PunktDostawy,Staromiejska,Katowice,Piotrkowska,Łódź,13:00-14:00,219.51,134.55
