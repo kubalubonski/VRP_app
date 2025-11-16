@@ -1,0 +1,421 @@
+StartIdx,EndIdx,StartTyp,EndTyp,StartUlica,StartMiasto,EndUlica,EndMiasto,DeliveryTimeWindow,Distance_km,Duration_time_expected,Duration_time_pessimistic,Duration_time_optimistic
+0,1,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Warszawa,09:04-13:59,119.43,120.68,134.42,112.93
+0,2,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Kraków,09:51-14:25,114.89,107.66,139.37,102.27
+0,3,Magazyn,PunktDostawy,Puławska,Warszawa,Długa,Poznań,11:39-15:51,108.98,101.11,114.22,95.15
+0,4,Magazyn,PunktDostawy,Puławska,Warszawa,Kościuszki,Gdańsk,12:52-17:48,117.43,97.43,105.46,86.25
+0,5,Magazyn,PunktDostawy,Puławska,Warszawa,Lipowa,Łódź,09:13-13:54,108.03,108.5,122.72,100.52
+0,6,Magazyn,PunktDostawy,Puławska,Warszawa,Polna,Wrocław,08:24-13:24,14.57,14.57,15.87,13.57
+0,7,Magazyn,PunktDostawy,Puławska,Warszawa,Słoneczna,Katowice,08:00-12:45,83.05,70.3,76.55,65.85
+0,8,Magazyn,PunktDostawy,Puławska,Warszawa,Kwiatowa,Lublin,09:26-13:33,66.04,57.53,73.48,54.47
+0,9,Magazyn,PunktDostawy,Puławska,Warszawa,Krótka,Szczecin,13:54-18:00,55.8,51.09,57.68,46.11
+0,10,Magazyn,PunktDostawy,Puławska,Warszawa,Sportowa,Bydgoszcz,12:30-17:00,114.3,121.49,135.39,109.14
+0,11,Magazyn,PunktDostawy,Puławska,Warszawa,Szkolna,Warszawa,10:00-14:57,54.34,47.75,53.52,45.25
+0,12,Magazyn,PunktDostawy,Puławska,Warszawa,Leśna,Kraków,10:02-14:23,34.95,36.26,41.11,34.17
+0,13,Magazyn,PunktDostawy,Puławska,Warszawa,Ogrodowa,Poznań,12:26-17:09,44.61,44.11,53.06,39.91
+0,14,Magazyn,PunktDostawy,Puławska,Warszawa,Widokowa,Gdańsk,14:05-18:00,109.37,88.78,99.51,83.69
+0,15,Magazyn,PunktDostawy,Puławska,Warszawa,Spacerowa,Łódź,13:45-18:00,99.78,97.66,107.31,91.29
+0,16,Magazyn,PunktDostawy,Puławska,Warszawa,Floriańska,Wrocław,09:38-13:44,59.81,66.42,82.19,60.79
+0,17,Magazyn,PunktDostawy,Puławska,Warszawa,Święty Marcin,Katowice,08:48-13:38,56.37,48.49,53.41,44.4
+0,18,Magazyn,PunktDostawy,Puławska,Warszawa,Długa,Lublin,11:47-16:11,86.34,85.4,92.6,77.83
+0,19,Magazyn,PunktDostawy,Puławska,Warszawa,Kościuszki,Szczecin,11:21-15:31,35.25,31.33,37.67,28.97
+0,20,Magazyn,PunktDostawy,Puławska,Warszawa,Lipowa,Bydgoszcz,14:40-18:00,64.43,61.7,67.62,58.5
+1,0,PunktDostawy,Magazyn,Floriańska,Warszawa,Puławska,Warszawa,,115.02,98.71,109.77,93.29
+1,2,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Święty Marcin,Kraków,09:51-14:25,66.17,53.73,58.35,48.56
+1,3,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Długa,Poznań,11:39-15:51,54.26,45.89,49.88,41.77
+1,4,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Kościuszki,Gdańsk,12:52-17:48,11.14,9.39,11.37,8.79
+1,5,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Lipowa,Łódź,09:13-13:54,32.32,32.72,35.87,30.26
+1,6,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Polna,Wrocław,08:24-13:24,120.6,119.55,151.27,108.34
+1,7,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Słoneczna,Katowice,08:00-12:45,35.86,31.84,35.19,29.04
+1,8,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Kwiatowa,Lublin,09:26-13:33,53.1,48.56,52.67,45.02
+1,9,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Krótka,Szczecin,13:54-18:00,73.18,58.96,67.03,52.42
+1,10,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Sportowa,Bydgoszcz,12:30-17:00,62.44,63.69,79.09,59.56
+1,11,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Szkolna,Warszawa,10:00-14:57,65.32,59.13,66.96,53.5
+1,12,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Leśna,Kraków,10:02-14:23,78.38,76.96,86.37,71.29
+1,13,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Ogrodowa,Poznań,12:26-17:09,72.11,60.65,68.96,54.04
+1,14,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Widokowa,Gdańsk,14:05-18:00,24.51,21.9,25.11,19.32
+1,15,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Spacerowa,Łódź,13:45-18:00,37.47,34.0,38.56,31.59
+1,16,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Floriańska,Wrocław,09:38-13:44,90.43,86.95,95.38,77.59
+1,17,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Święty Marcin,Katowice,08:48-13:38,63.6,63.45,72.91,59.35
+1,18,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Długa,Lublin,11:47-16:11,33.63,35.63,45.46,33.49
+1,19,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Kościuszki,Szczecin,11:21-15:31,84.89,79.84,102.33,73.09
+1,20,PunktDostawy,PunktDostawy,Floriańska,Warszawa,Lipowa,Bydgoszcz,14:40-18:00,82.84,82.87,91.66,77.33
+2,0,PunktDostawy,Magazyn,Święty Marcin,Kraków,Puławska,Warszawa,,110.38,93.69,101.3,86.45
+2,1,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Floriańska,Warszawa,09:04-13:59,61.75,54.0,60.16,47.94
+2,3,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Długa,Poznań,11:39-15:51,12.21,11.79,13.17,10.94
+2,4,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Kościuszki,Gdańsk,12:52-17:48,77.68,73.0,81.37,65.73
+2,5,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Lipowa,Łódź,09:13-13:54,90.25,91.07,110.1,84.87
+2,6,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Polna,Wrocław,08:24-13:24,104.43,117.91,134.3,110.2
+2,7,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Słoneczna,Katowice,08:00-12:45,74.15,67.98,73.76,61.44
+2,8,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Kwiatowa,Lublin,09:26-13:33,74.75,62.45,78.63,55.08
+2,9,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Krótka,Szczecin,13:54-18:00,56.93,51.52,65.23,46.87
+2,10,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Sportowa,Bydgoszcz,12:30-17:00,3.3,2.94,3.62,2.71
+2,11,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Szkolna,Warszawa,10:00-14:57,59.29,58.73,71.33,53.63
+2,12,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Leśna,Kraków,10:02-14:23,82.39,66.77,75.13,62.0
+2,13,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Ogrodowa,Poznań,12:26-17:09,84.49,80.17,88.31,75.4
+2,14,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Widokowa,Gdańsk,14:05-18:00,79.89,66.43,74.41,61.19
+2,15,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Spacerowa,Łódź,13:45-18:00,29.23,29.84,34.24,27.39
+2,16,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Floriańska,Wrocław,09:38-13:44,57.74,64.69,78.76,58.2
+2,17,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Święty Marcin,Katowice,08:48-13:38,80.57,82.65,94.06,74.15
+2,18,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Długa,Lublin,11:47-16:11,81.31,77.74,84.76,72.3
+2,19,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Kościuszki,Szczecin,11:21-15:31,89.14,72.08,78.67,66.91
+2,20,PunktDostawy,PunktDostawy,Święty Marcin,Kraków,Lipowa,Bydgoszcz,14:40-18:00,53.78,44.46,57.53,41.58
+3,0,PunktDostawy,Magazyn,Długa,Poznań,Puławska,Warszawa,,105.21,113.03,123.41,106.31
+3,1,PunktDostawy,PunktDostawy,Długa,Poznań,Floriańska,Warszawa,09:04-13:59,51.64,50.02,56.17,46.05
+3,2,PunktDostawy,PunktDostawy,Długa,Poznań,Święty Marcin,Kraków,09:51-14:25,12.58,10.57,13.22,9.45
+3,4,PunktDostawy,PunktDostawy,Długa,Poznań,Kościuszki,Gdańsk,12:52-17:48,66.45,68.97,82.97,60.76
+3,5,PunktDostawy,PunktDostawy,Długa,Poznań,Lipowa,Łódź,09:13-13:54,78.24,82.05,90.43,74.34
+3,6,PunktDostawy,PunktDostawy,Długa,Poznań,Polna,Wrocław,08:24-13:24,105.5,104.83,118.71,94.96
+3,7,PunktDostawy,PunktDostawy,Długa,Poznań,Słoneczna,Katowice,08:00-12:45,62.36,54.44,62.16,51.41
+3,8,PunktDostawy,PunktDostawy,Długa,Poznań,Kwiatowa,Lublin,09:26-13:33,66.2,65.85,82.95,61.25
+3,9,PunktDostawy,PunktDostawy,Długa,Poznań,Krótka,Szczecin,13:54-18:00,54.89,54.81,70.84,49.97
+3,10,PunktDostawy,PunktDostawy,Długa,Poznań,Sportowa,Bydgoszcz,12:30-17:00,9.95,8.29,9.42,7.33
+3,11,PunktDostawy,PunktDostawy,Długa,Poznań,Szkolna,Warszawa,10:00-14:57,54.8,44.8,51.08,41.67
+3,12,PunktDostawy,PunktDostawy,Długa,Poznań,Leśna,Kraków,10:02-14:23,78.58,69.47,77.34,64.36
+3,13,PunktDostawy,PunktDostawy,Długa,Poznań,Ogrodowa,Poznań,12:26-17:09,76.34,77.59,86.24,71.65
+3,14,PunktDostawy,PunktDostawy,Długa,Poznań,Widokowa,Gdańsk,14:05-18:00,65.92,55.26,60.68,49.87
+3,15,PunktDostawy,PunktDostawy,Długa,Poznań,Spacerowa,Łódź,13:45-18:00,18.38,17.96,20.47,15.96
+3,16,PunktDostawy,PunktDostawy,Długa,Poznań,Floriańska,Wrocław,09:38-13:44,56.78,47.59,53.84,42.43
+3,17,PunktDostawy,PunktDostawy,Długa,Poznań,Święty Marcin,Katowice,08:48-13:38,71.0,65.62,75.01,60.97
+3,18,PunktDostawy,PunktDostawy,Długa,Poznań,Długa,Lublin,11:47-16:11,62.94,60.99,73.39,56.19
+3,19,PunktDostawy,PunktDostawy,Długa,Poznań,Kościuszki,Szczecin,11:21-15:31,81.88,81.59,89.99,77.51
+3,20,PunktDostawy,PunktDostawy,Długa,Poznań,Lipowa,Bydgoszcz,14:40-18:00,50.2,46.73,52.98,42.69
+4,0,PunktDostawy,Magazyn,Kościuszki,Gdańsk,Puławska,Warszawa,,117.96,100.74,110.22,90.58
+4,1,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Floriańska,Warszawa,09:04-13:59,11.34,11.26,12.35,10.26
+4,2,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Święty Marcin,Kraków,09:51-14:25,78.06,68.39,74.85,62.02
+4,3,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Długa,Poznań,11:39-15:51,63.37,54.39,68.24,49.34
+4,5,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Lipowa,Łódź,09:13-13:54,22.06,22.63,24.62,20.61
+4,6,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Polna,Wrocław,08:24-13:24,120.9,103.82,114.98,94.98
+4,7,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Słoneczna,Katowice,08:00-12:45,33.96,32.56,36.11,29.6
+4,8,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Kwiatowa,Lublin,09:26-13:33,51.02,41.63,45.93,38.5
+4,9,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Krótka,Szczecin,13:54-18:00,81.02,81.59,100.33,73.09
+4,10,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Sportowa,Bydgoszcz,12:30-17:00,74.17,68.45,85.26,64.16
+4,11,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Szkolna,Warszawa,10:00-14:57,69.83,55.4,71.68,50.81
+4,12,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Leśna,Kraków,10:02-14:23,87.39,74.67,81.99,70.81
+4,13,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Ogrodowa,Poznań,12:26-17:09,69.6,64.01,72.5,57.84
+4,14,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Widokowa,Gdańsk,14:05-18:00,15.5,16.28,18.01,14.38
+4,15,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Spacerowa,Łódź,13:45-18:00,48.66,46.83,59.95,42.27
+4,16,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Floriańska,Wrocław,09:38-13:44,97.15,87.93,97.04,81.91
+4,17,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Święty Marcin,Katowice,08:48-13:38,59.95,56.32,61.37,53.13
+4,18,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Długa,Lublin,11:47-16:11,29.65,31.15,34.79,27.46
+4,19,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Kościuszki,Szczecin,11:21-15:31,87.22,95.93,106.41,88.91
+4,20,PunktDostawy,PunktDostawy,Kościuszki,Gdańsk,Lipowa,Bydgoszcz,14:40-18:00,88.95,85.54,109.01,78.85
+5,0,PunktDostawy,Magazyn,Lipowa,Łódź,Puławska,Warszawa,,107.12,93.15,111.79,87.55
+5,1,PunktDostawy,PunktDostawy,Lipowa,Łódź,Floriańska,Warszawa,09:04-13:59,29.47,27.92,31.68,25.46
+5,2,PunktDostawy,PunktDostawy,Lipowa,Łódź,Święty Marcin,Kraków,09:51-14:25,91.44,93.02,106.03,85.39
+5,3,PunktDostawy,PunktDostawy,Lipowa,Łódź,Długa,Poznań,11:39-15:51,74.25,66.05,74.61,61.55
+5,4,PunktDostawy,PunktDostawy,Lipowa,Łódź,Kościuszki,Gdańsk,12:52-17:48,23.54,22.71,29.35,21.18
+5,6,PunktDostawy,PunktDostawy,Lipowa,Łódź,Polna,Wrocław,08:24-13:24,104.93,100.31,110.1,90.98
+5,7,PunktDostawy,PunktDostawy,Lipowa,Łódź,Słoneczna,Katowice,08:00-12:45,23.91,19.63,21.22,18.48
+5,8,PunktDostawy,PunktDostawy,Lipowa,Łódź,Kwiatowa,Lublin,09:26-13:33,40.25,43.44,49.63,39.92
+5,9,PunktDostawy,PunktDostawy,Lipowa,Łódź,Krótka,Szczecin,13:54-18:00,73.08,72.19,79.72,67.68
+5,10,PunktDostawy,PunktDostawy,Lipowa,Łódź,Sportowa,Bydgoszcz,12:30-17:00,84.95,83.89,105.9,73.87
+5,11,PunktDostawy,PunktDostawy,Lipowa,Łódź,Szkolna,Warszawa,10:00-14:57,61.28,68.33,76.44,60.55
+5,12,PunktDostawy,PunktDostawy,Lipowa,Łódź,Leśna,Kraków,10:02-14:23,69.23,66.2,75.6,60.78
+5,13,PunktDostawy,PunktDostawy,Lipowa,Łódź,Ogrodowa,Poznań,12:26-17:09,56.52,50.73,58.12,47.8
+5,14,PunktDostawy,PunktDostawy,Lipowa,Łódź,Widokowa,Gdańsk,14:05-18:00,7.27,5.94,6.68,5.24
+5,15,PunktDostawy,PunktDostawy,Lipowa,Łódź,Spacerowa,Łódź,13:45-18:00,58.43,48.46,53.06,44.54
+5,16,PunktDostawy,PunktDostawy,Lipowa,Łódź,Floriańska,Wrocław,09:38-13:44,99.23,92.97,120.82,87.38
+5,17,PunktDostawy,PunktDostawy,Lipowa,Łódź,Święty Marcin,Katowice,08:48-13:38,44.46,48.62,54.02,45.83
+5,18,PunktDostawy,PunktDostawy,Lipowa,Łódź,Długa,Lublin,11:47-16:11,15.88,12.37,13.62,11.55
+5,19,PunktDostawy,PunktDostawy,Lipowa,Łódź,Kościuszki,Szczecin,11:21-15:31,66.46,70.58,80.07,66.19
+5,20,PunktDostawy,PunktDostawy,Lipowa,Łódź,Lipowa,Bydgoszcz,14:40-18:00,92.97,74.77,81.86,66.8
+6,0,PunktDostawy,Magazyn,Polna,Wrocław,Puławska,Warszawa,,14.61,12.53,14.11,11.77
+6,1,PunktDostawy,PunktDostawy,Polna,Wrocław,Floriańska,Warszawa,09:04-13:59,117.02,97.92,109.78,86.67
+6,2,PunktDostawy,PunktDostawy,Polna,Wrocław,Święty Marcin,Kraków,09:51-14:25,101.56,101.7,115.48,91.52
+6,3,PunktDostawy,PunktDostawy,Polna,Wrocław,Długa,Poznań,11:39-15:51,100.32,86.18,108.19,79.34
+6,4,PunktDostawy,PunktDostawy,Polna,Wrocław,Kościuszki,Gdańsk,12:52-17:48,116.4,120.94,134.01,113.2
+6,5,PunktDostawy,PunktDostawy,Polna,Wrocław,Lipowa,Łódź,09:13-13:54,107.02,105.91,118.14,100.34
+6,7,PunktDostawy,PunktDostawy,Polna,Wrocław,Słoneczna,Katowice,08:00-12:45,89.17,86.85,106.86,81.72
+6,8,PunktDostawy,PunktDostawy,Polna,Wrocław,Kwiatowa,Lublin,09:26-13:33,67.2,54.1,60.01,47.78
+6,9,PunktDostawy,PunktDostawy,Polna,Wrocław,Krótka,Szczecin,13:54-18:00,50.26,49.35,56.44,45.29
+6,10,PunktDostawy,PunktDostawy,Polna,Wrocław,Sportowa,Bydgoszcz,12:30-17:00,101.56,83.03,89.69,77.27
+6,11,PunktDostawy,PunktDostawy,Polna,Wrocław,Szkolna,Warszawa,10:00-14:57,55.22,54.64,68.52,51.7
+6,12,PunktDostawy,PunktDostawy,Polna,Wrocław,Leśna,Kraków,10:02-14:23,38.79,32.15,35.15,28.82
+6,13,PunktDostawy,PunktDostawy,Polna,Wrocław,Ogrodowa,Poznań,12:26-17:09,51.5,55.83,70.17,52.58
+6,14,PunktDostawy,PunktDostawy,Polna,Wrocław,Widokowa,Gdańsk,14:05-18:00,114.87,91.69,101.73,83.88
+6,15,PunktDostawy,PunktDostawy,Polna,Wrocław,Spacerowa,Łódź,13:45-18:00,102.0,94.92,106.06,88.23
+6,16,PunktDostawy,PunktDostawy,Polna,Wrocław,Floriańska,Wrocław,09:38-13:44,53.08,54.71,71.09,49.24
+6,17,PunktDostawy,PunktDostawy,Polna,Wrocław,Święty Marcin,Katowice,08:48-13:38,61.59,59.21,65.96,53.11
+6,18,PunktDostawy,PunktDostawy,Polna,Wrocław,Długa,Lublin,11:47-16:11,93.72,83.03,91.15,74.8
+6,19,PunktDostawy,PunktDostawy,Polna,Wrocław,Kościuszki,Szczecin,11:21-15:31,41.15,42.61,47.19,39.1
+6,20,PunktDostawy,PunktDostawy,Polna,Wrocław,Lipowa,Bydgoszcz,14:40-18:00,55.72,56.17,63.0,50.23
+7,0,PunktDostawy,Magazyn,Słoneczna,Katowice,Puławska,Warszawa,,87.09,73.8,94.5,65.05
+7,1,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Floriańska,Warszawa,09:04-13:59,36.13,31.06,39.93,27.47
+7,2,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Święty Marcin,Kraków,09:51-14:25,73.68,62.06,69.4,58.56
+7,3,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Długa,Poznań,11:39-15:51,65.61,63.83,80.49,57.91
+7,4,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Kościuszki,Gdańsk,12:52-17:48,36.18,30.42,38.27,28.65
+7,5,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Lipowa,Łódź,09:13-13:54,23.11,21.75,27.59,20.21
+7,6,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Polna,Wrocław,08:24-13:24,91.39,93.7,103.68,82.79
+7,8,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Kwiatowa,Lublin,09:26-13:33,17.54,13.88,16.99,12.62
+7,9,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Krótka,Szczecin,13:54-18:00,54.43,44.75,49.55,40.51
+7,10,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Sportowa,Bydgoszcz,12:30-17:00,74.63,67.37,72.79,62.62
+7,11,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Szkolna,Warszawa,10:00-14:57,39.54,36.71,41.16,32.62
+7,12,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Leśna,Kraków,10:02-14:23,50.5,45.9,56.15,41.08
+7,13,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Ogrodowa,Poznań,12:26-17:09,38.45,40.13,50.42,35.38
+7,14,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Widokowa,Gdańsk,14:05-18:00,23.54,23.82,29.36,22.27
+7,15,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Spacerowa,Łódź,13:45-18:00,45.57,43.89,49.87,40.84
+7,16,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Floriańska,Wrocław,09:38-13:44,74.36,76.51,86.95,68.88
+7,17,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Święty Marcin,Katowice,08:48-13:38,24.87,24.11,27.34,22.71
+7,18,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Długa,Lublin,11:47-16:11,7.09,6.01,7.7,5.63
+7,19,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Kościuszki,Szczecin,11:21-15:31,51.44,56.94,62.18,50.72
+7,20,PunktDostawy,PunktDostawy,Słoneczna,Katowice,Lipowa,Bydgoszcz,14:40-18:00,67.04,68.26,73.9,61.8
+8,0,PunktDostawy,Magazyn,Kwiatowa,Lublin,Puławska,Warszawa,,66.31,58.96,65.18,54.04
+8,1,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Floriańska,Warszawa,09:04-13:59,54.27,47.45,52.64,43.4
+8,2,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Święty Marcin,Kraków,09:51-14:25,75.93,60.23,68.41,55.76
+8,3,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Długa,Poznań,11:39-15:51,70.84,76.67,83.87,71.77
+8,4,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Kościuszki,Gdańsk,12:52-17:48,50.85,56.82,64.94,50.93
+8,5,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Lipowa,Łódź,09:13-13:54,40.72,33.9,43.7,31.65
+8,6,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Polna,Wrocław,08:24-13:24,70.01,78.68,87.96,74.37
+8,7,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Słoneczna,Katowice,08:00-12:45,18.45,17.73,21.37,16.39
+8,9,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Krótka,Szczecin,13:54-18:00,41.85,37.84,43.13,35.56
+8,10,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Sportowa,Bydgoszcz,12:30-17:00,75.95,75.51,97.16,66.7
+8,11,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Szkolna,Warszawa,10:00-14:57,27.67,22.87,24.84,20.55
+8,12,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Leśna,Kraków,10:02-14:23,32.88,26.24,30.16,24.21
+8,13,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Ogrodowa,Poznań,12:26-17:09,19.34,20.67,26.33,18.92
+8,14,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Widokowa,Gdańsk,14:05-18:00,39.11,40.17,45.19,36.64
+8,15,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Spacerowa,Łódź,13:45-18:00,54.63,56.91,64.29,52.24
+8,16,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Floriańska,Wrocław,09:38-13:44,65.6,57.75,64.29,52.31
+8,17,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Święty Marcin,Katowice,08:48-13:38,7.59,7.78,8.48,6.93
+8,18,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Długa,Lublin,11:47-16:11,25.6,25.24,31.64,23.51
+8,19,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Kościuszki,Szczecin,11:21-15:31,32.28,30.04,32.51,26.77
+8,20,PunktDostawy,PunktDostawy,Kwiatowa,Lublin,Lipowa,Bydgoszcz,14:40-18:00,56.42,56.84,64.29,51.79
+9,0,PunktDostawy,Magazyn,Krótka,Szczecin,Puławska,Warszawa,,56.54,49.43,62.52,44.68
+9,1,PunktDostawy,PunktDostawy,Krótka,Szczecin,Floriańska,Warszawa,09:04-13:59,72.9,79.53,96.59,71.3
+9,2,PunktDostawy,PunktDostawy,Krótka,Szczecin,Święty Marcin,Kraków,09:51-14:25,58.84,52.72,57.75,49.1
+9,3,PunktDostawy,PunktDostawy,Krótka,Szczecin,Długa,Poznań,11:39-15:51,55.24,48.8,53.39,45.66
+9,4,PunktDostawy,PunktDostawy,Krótka,Szczecin,Kościuszki,Gdańsk,12:52-17:48,83.77,70.31,80.58,61.88
+9,5,PunktDostawy,PunktDostawy,Krótka,Szczecin,Lipowa,Łódź,09:13-13:54,71.79,77.1,87.1,69.1
+9,6,PunktDostawy,PunktDostawy,Krótka,Szczecin,Polna,Wrocław,08:24-13:24,48.0,49.08,54.33,43.46
+9,7,PunktDostawy,PunktDostawy,Krótka,Szczecin,Słoneczna,Katowice,08:00-12:45,52.87,42.13,47.17,38.82
+9,8,PunktDostawy,PunktDostawy,Krótka,Szczecin,Kwiatowa,Lublin,09:26-13:33,38.94,37.75,41.44,34.69
+9,10,PunktDostawy,PunktDostawy,Krótka,Szczecin,Sportowa,Bydgoszcz,12:30-17:00,53.42,43.53,48.18,38.7
+9,11,PunktDostawy,PunktDostawy,Krótka,Szczecin,Szkolna,Warszawa,10:00-14:57,14.61,15.76,17.55,14.59
+9,12,PunktDostawy,PunktDostawy,Krótka,Szczecin,Leśna,Kraków,10:02-14:23,26.55,24.99,27.78,22.14
+9,13,PunktDostawy,PunktDostawy,Krótka,Szczecin,Ogrodowa,Poznań,12:26-17:09,36.97,30.12,37.61,27.13
+9,14,PunktDostawy,PunktDostawy,Krótka,Szczecin,Widokowa,Gdańsk,14:05-18:00,76.35,80.89,100.4,73.28
+9,15,PunktDostawy,PunktDostawy,Krótka,Szczecin,Spacerowa,Łódź,13:45-18:00,50.17,54.94,70.96,49.98
+9,16,PunktDostawy,PunktDostawy,Krótka,Szczecin,Floriańska,Wrocław,09:38-13:44,21.47,22.56,28.35,20.03
+9,17,PunktDostawy,PunktDostawy,Krótka,Szczecin,Święty Marcin,Katowice,08:48-13:38,39.13,32.01,36.22,28.2
+9,18,PunktDostawy,PunktDostawy,Krótka,Szczecin,Długa,Lublin,11:47-16:11,61.13,66.28,72.95,59.31
+9,19,PunktDostawy,PunktDostawy,Krótka,Szczecin,Kościuszki,Szczecin,11:21-15:31,35.41,28.3,32.06,25.37
+9,20,PunktDostawy,PunktDostawy,Krótka,Szczecin,Lipowa,Bydgoszcz,14:40-18:00,19.92,17.75,21.96,16.85
+10,0,PunktDostawy,Magazyn,Sportowa,Bydgoszcz,Puławska,Warszawa,,114.84,117.97,130.0,107.25
+10,1,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Floriańska,Warszawa,09:04-13:59,61.73,50.84,55.5,45.58
+10,2,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Święty Marcin,Kraków,09:51-14:25,3.47,3.32,4.18,3.08
+10,3,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Długa,Poznań,11:39-15:51,10.17,8.8,11.07,8.23
+10,4,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Kościuszki,Gdańsk,12:52-17:48,76.24,60.87,68.78,56.04
+10,5,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Lipowa,Łódź,09:13-13:54,86.86,82.52,101.46,76.37
+10,6,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Polna,Wrocław,08:24-13:24,103.82,82.04,100.38,77.74
+10,7,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Słoneczna,Katowice,08:00-12:45,69.0,58.91,66.08,52.81
+10,8,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Kwiatowa,Lublin,09:26-13:33,71.8,66.82,73.31,59.51
+10,9,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Krótka,Szczecin,13:54-18:00,55.63,56.18,72.32,53.18
+10,11,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Szkolna,Warszawa,10:00-14:57,61.48,52.3,58.76,47.15
+10,12,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Leśna,Kraków,10:02-14:23,75.97,62.86,70.55,59.39
+10,13,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Ogrodowa,Poznań,12:26-17:09,86.36,81.0,91.9,75.42
+10,14,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Widokowa,Gdańsk,14:05-18:00,75.94,61.44,74.59,56.57
+10,15,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Spacerowa,Łódź,13:45-18:00,28.13,27.83,35.51,25.47
+10,16,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Floriańska,Wrocław,09:38-13:44,55.52,45.77,51.2,43.01
+10,17,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Święty Marcin,Katowice,08:48-13:38,79.29,67.16,77.03,60.87
+10,18,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Długa,Lublin,11:47-16:11,74.32,62.91,69.95,56.78
+10,19,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Kościuszki,Szczecin,11:21-15:31,85.89,73.16,81.95,65.39
+10,20,PunktDostawy,PunktDostawy,Sportowa,Bydgoszcz,Lipowa,Bydgoszcz,14:40-18:00,52.44,54.17,69.11,50.8
+11,0,PunktDostawy,Magazyn,Szkolna,Warszawa,Puławska,Warszawa,,56.32,61.31,75.0,56.04
+11,1,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Floriańska,Warszawa,09:04-13:59,63.51,53.99,60.79,49.98
+11,2,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Święty Marcin,Kraków,09:51-14:25,62.14,51.17,61.95,46.0
+11,3,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Długa,Poznań,11:39-15:51,55.85,53.14,59.68,49.82
+11,4,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Kościuszki,Gdańsk,12:52-17:48,66.62,57.75,63.66,53.29
+11,5,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Lipowa,Łódź,09:13-13:54,60.43,64.4,72.79,60.23
+11,6,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Polna,Wrocław,08:24-13:24,54.15,43.07,47.63,40.68
+11,7,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Słoneczna,Katowice,08:00-12:45,38.32,40.34,50.45,37.82
+11,8,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Kwiatowa,Lublin,09:26-13:33,26.44,22.23,27.07,20.6
+11,9,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Krótka,Szczecin,13:54-18:00,14.79,14.56,15.92,12.95
+11,10,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Sportowa,Bydgoszcz,12:30-17:00,59.78,64.03,71.05,57.4
+11,12,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Leśna,Kraków,10:02-14:23,21.32,17.85,19.6,15.79
+11,13,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Ogrodowa,Poznań,12:26-17:09,25.41,24.55,27.14,21.98
+11,14,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Widokowa,Gdańsk,14:05-18:00,63.56,62.1,69.3,58.89
+11,15,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Spacerowa,Łódź,13:45-18:00,47.02,49.22,62.19,46.18
+11,16,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Floriańska,Wrocław,09:38-13:44,35.37,27.23,30.82,24.04
+11,17,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Święty Marcin,Katowice,08:48-13:38,25.32,22.36,24.62,20.36
+11,18,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Długa,Lublin,11:47-16:11,48.43,43.51,54.33,40.9
+11,19,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Kościuszki,Szczecin,11:21-15:31,30.19,26.32,33.19,23.86
+11,20,PunktDostawy,PunktDostawy,Szkolna,Warszawa,Lipowa,Bydgoszcz,14:40-18:00,34.13,30.05,33.17,26.82
+12,0,PunktDostawy,Magazyn,Leśna,Kraków,Puławska,Warszawa,,36.04,32.83,37.53,30.33
+12,1,PunktDostawy,PunktDostawy,Leśna,Kraków,Floriańska,Warszawa,09:04-13:59,79.54,70.86,78.42,64.14
+12,2,PunktDostawy,PunktDostawy,Leśna,Kraków,Święty Marcin,Kraków,09:51-14:25,85.58,78.24,86.91,71.28
+12,3,PunktDostawy,PunktDostawy,Leśna,Kraków,Długa,Poznań,11:39-15:51,74.83,65.5,71.59,59.84
+12,4,PunktDostawy,PunktDostawy,Leśna,Kraków,Kościuszki,Gdańsk,12:52-17:48,80.15,64.88,72.71,60.13
+12,5,PunktDostawy,PunktDostawy,Leśna,Kraków,Lipowa,Łódź,09:13-13:54,70.72,68.83,76.48,63.79
+12,6,PunktDostawy,PunktDostawy,Leśna,Kraków,Polna,Wrocław,08:24-13:24,37.11,33.93,42.7,30.18
+12,7,PunktDostawy,PunktDostawy,Leśna,Kraków,Słoneczna,Katowice,08:00-12:45,51.72,46.11,58.76,41.27
+12,8,PunktDostawy,PunktDostawy,Leśna,Kraków,Kwiatowa,Lublin,09:26-13:33,31.67,32.88,37.21,29.82
+12,9,PunktDostawy,PunktDostawy,Leśna,Kraków,Krótka,Szczecin,13:54-18:00,26.33,22.81,25.77,20.16
+12,10,PunktDostawy,PunktDostawy,Leśna,Kraków,Sportowa,Bydgoszcz,12:30-17:00,75.55,74.97,84.92,67.78
+12,11,PunktDostawy,PunktDostawy,Leśna,Kraków,Szkolna,Warszawa,10:00-14:57,21.06,19.47,24.4,17.91
+12,13,PunktDostawy,PunktDostawy,Leśna,Kraków,Ogrodowa,Poznań,12:26-17:09,17.92,20.13,22.93,18.87
+12,14,PunktDostawy,PunktDostawy,Leśna,Kraków,Widokowa,Gdańsk,14:05-18:00,70.86,65.28,74.69,60.56
+12,15,PunktDostawy,PunktDostawy,Leśna,Kraków,Spacerowa,Łódź,13:45-18:00,68.17,68.09,77.26,63.64
+12,16,PunktDostawy,PunktDostawy,Leśna,Kraków,Floriańska,Wrocław,09:38-13:44,45.38,39.21,42.43,35.69
+12,17,PunktDostawy,PunktDostawy,Leśna,Kraków,Święty Marcin,Katowice,08:48-13:38,25.81,23.41,29.08,21.7
+12,18,PunktDostawy,PunktDostawy,Leśna,Kraków,Długa,Lublin,11:47-16:11,53.89,47.63,53.71,43.88
+12,19,PunktDostawy,PunktDostawy,Leśna,Kraków,Kościuszki,Szczecin,11:21-15:31,11.46,10.47,13.44,9.24
+12,20,PunktDostawy,PunktDostawy,Leśna,Kraków,Lipowa,Bydgoszcz,14:40-18:00,43.49,39.3,43.91,35.55
+13,0,PunktDostawy,Magazyn,Ogrodowa,Poznań,Puławska,Warszawa,,49.16,40.92,46.02,38.81
+13,1,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Floriańska,Warszawa,09:04-13:59,70.1,73.9,90.58,68.16
+13,2,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Święty Marcin,Kraków,09:51-14:25,88.26,82.81,103.26,76.1
+13,3,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Długa,Poznań,11:39-15:51,79.25,66.08,85.39,59.0
+13,4,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Kościuszki,Gdańsk,12:52-17:48,73.49,59.64,66.78,55.83
+13,5,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Lipowa,Łódź,09:13-13:54,58.74,57.39,69.14,51.53
+13,6,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Polna,Wrocław,08:24-13:24,54.23,58.97,74.53,54.52
+13,7,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Słoneczna,Katowice,08:00-12:45,36.77,30.99,34.36,28.31
+13,8,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Kwiatowa,Lublin,09:26-13:33,19.29,18.93,23.49,17.52
+13,9,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Krótka,Szczecin,13:54-18:00,38.51,37.22,40.98,32.84
+13,10,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Sportowa,Bydgoszcz,12:30-17:00,80.4,78.5,88.36,70.53
+13,11,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Szkolna,Warszawa,10:00-14:57,25.0,24.9,27.82,22.69
+13,12,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Leśna,Kraków,10:02-14:23,17.6,14.72,16.85,13.74
+13,14,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Widokowa,Gdańsk,14:05-18:00,62.01,55.9,61.04,50.06
+13,15,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Spacerowa,Łódź,13:45-18:00,68.19,73.12,80.06,66.68
+13,16,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Floriańska,Wrocław,09:38-13:44,60.6,51.07,58.05,45.74
+13,17,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Święty Marcin,Katowice,08:48-13:38,11.81,9.65,10.49,9.04
+13,18,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Długa,Lublin,11:47-16:11,42.33,41.8,46.55,37.07
+13,19,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Kościuszki,Szczecin,11:21-15:31,12.32,13.22,14.62,12.0
+13,20,PunktDostawy,PunktDostawy,Ogrodowa,Poznań,Lipowa,Bydgoszcz,14:40-18:00,54.98,59.66,67.29,55.86
+14,0,PunktDostawy,Magazyn,Widokowa,Gdańsk,Puławska,Warszawa,,103.3,89.99,101.65,82.09
+14,1,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Floriańska,Warszawa,09:04-13:59,23.38,22.16,27.59,19.95
+14,2,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Święty Marcin,Kraków,09:51-14:25,82.08,77.77,89.02,72.89
+14,3,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Długa,Poznań,11:39-15:51,67.48,55.21,61.27,51.34
+14,4,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Kościuszki,Gdańsk,12:52-17:48,15.76,15.13,16.43,13.65
+14,5,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Lipowa,Łódź,09:13-13:54,6.91,5.62,7.02,5.11
+14,6,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Polna,Wrocław,08:24-13:24,107.98,98.16,110.71,93.14
+14,7,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Słoneczna,Katowice,08:00-12:45,23.75,23.64,26.34,21.92
+14,8,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Kwiatowa,Lublin,09:26-13:33,41.65,36.34,40.46,32.88
+14,9,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Krótka,Szczecin,13:54-18:00,77.11,62.37,69.94,57.72
+14,10,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Sportowa,Bydgoszcz,12:30-17:00,76.61,64.88,72.43,60.07
+14,11,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Szkolna,Warszawa,10:00-14:57,61.29,61.78,75.81,54.97
+14,12,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Leśna,Kraków,10:02-14:23,70.29,58.34,63.94,55.23
+14,13,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Ogrodowa,Poznań,12:26-17:09,57.41,49.49,55.99,46.66
+14,15,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Spacerowa,Łódź,13:45-18:00,52.58,45.23,50.76,42.34
+14,16,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Floriańska,Wrocław,09:38-13:44,90.7,79.39,100.11,74.43
+14,17,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Święty Marcin,Katowice,08:48-13:38,46.98,48.03,52.25,44.33
+14,18,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Długa,Lublin,11:47-16:11,16.21,14.55,16.29,13.75
+14,19,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Kościuszki,Szczecin,11:21-15:31,69.79,59.41,66.11,52.33
+14,20,PunktDostawy,PunktDostawy,Widokowa,Gdańsk,Lipowa,Bydgoszcz,14:40-18:00,92.75,99.87,109.23,90.2
+15,0,PunktDostawy,Magazyn,Spacerowa,Łódź,Puławska,Warszawa,,107.12,109.82,137.23,100.81
+15,1,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Floriańska,Warszawa,09:04-13:59,36.6,32.49,35.21,29.29
+15,2,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Święty Marcin,Kraków,09:51-14:25,30.27,25.32,30.75,22.79
+15,3,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Długa,Poznań,11:39-15:51,18.22,16.44,17.77,15.37
+15,4,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Kościuszki,Gdańsk,12:52-17:48,46.11,38.47,44.11,35.25
+15,5,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Lipowa,Łódź,09:13-13:54,59.3,54.9,60.27,52.08
+15,6,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Polna,Wrocław,08:24-13:24,104.16,90.46,102.12,83.92
+15,7,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Słoneczna,Katowice,08:00-12:45,45.62,47.18,52.26,43.04
+15,8,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Kwiatowa,Lublin,09:26-13:33,52.6,47.7,53.68,44.87
+15,9,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Krótka,Szczecin,13:54-18:00,52.58,55.59,61.66,51.09
+15,10,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Sportowa,Bydgoszcz,12:30-17:00,27.99,22.13,24.42,19.93
+15,11,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Szkolna,Warszawa,10:00-14:57,48.14,41.88,45.92,38.8
+15,12,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Leśna,Kraków,10:02-14:23,68.15,69.76,79.55,65.67
+15,13,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Ogrodowa,Poznań,12:26-17:09,66.47,56.33,64.12,52.06
+15,14,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Widokowa,Gdańsk,14:05-18:00,53.49,57.62,63.6,52.25
+15,16,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Floriańska,Wrocław,09:38-13:44,61.09,53.43,61.25,48.17
+15,17,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Święty Marcin,Katowice,08:48-13:38,56.13,59.01,74.82,52.04
+15,18,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Długa,Lublin,11:47-16:11,47.67,39.7,44.55,35.44
+15,19,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Kościuszki,Szczecin,11:21-15:31,73.09,73.84,82.74,66.32
+15,20,PunktDostawy,PunktDostawy,Spacerowa,Łódź,Lipowa,Bydgoszcz,14:40-18:00,56.35,52.21,64.08,47.5
+16,0,PunktDostawy,Magazyn,Floriańska,Wrocław,Puławska,Warszawa,,59.08,48.01,60.79,45.36
+16,1,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Floriańska,Warszawa,09:04-13:59,89.35,92.46,101.23,83.55
+16,2,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Święty Marcin,Kraków,09:51-14:25,58.25,48.79,53.98,43.43
+16,3,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Długa,Poznań,11:39-15:51,56.22,45.87,55.17,43.51
+16,4,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Kościuszki,Gdańsk,12:52-17:48,97.37,85.08,93.46,75.92
+16,5,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Lipowa,Łódź,09:13-13:54,98.92,101.83,122.55,92.96
+16,6,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Polna,Wrocław,08:24-13:24,52.58,51.6,62.86,48.66
+16,7,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Słoneczna,Katowice,08:00-12:45,71.11,57.57,74.35,51.1
+16,8,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Kwiatowa,Lublin,09:26-13:33,64.87,57.41,64.63,54.27
+16,9,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Krótka,Szczecin,13:54-18:00,22.59,22.88,25.4,21.35
+16,10,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Sportowa,Bydgoszcz,12:30-17:00,53.61,42.85,47.61,38.97
+16,11,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Szkolna,Warszawa,10:00-14:57,35.61,29.79,37.11,26.64
+16,12,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Leśna,Kraków,10:02-14:23,42.9,39.57,49.82,36.48
+16,13,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Ogrodowa,Poznań,12:26-17:09,55.54,48.82,53.64,43.15
+16,14,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Widokowa,Gdańsk,14:05-18:00,97.11,83.89,103.2,76.93
+16,15,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Spacerowa,Łódź,13:45-18:00,63.05,56.65,62.46,52.68
+16,17,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Święty Marcin,Katowice,08:48-13:38,64.27,66.98,72.94,62.75
+16,18,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Długa,Lublin,11:47-16:11,82.52,87.85,98.26,83.28
+16,19,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Kościuszki,Szczecin,11:21-15:31,53.48,54.84,66.92,51.13
+16,20,PunktDostawy,PunktDostawy,Floriańska,Wrocław,Lipowa,Bydgoszcz,14:40-18:00,6.48,5.05,6.25,4.69
+17,0,PunktDostawy,Magazyn,Święty Marcin,Katowice,Puławska,Warszawa,,55.73,53.36,59.06,49.72
+17,1,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Floriańska,Warszawa,09:04-13:59,60.35,55.5,67.82,49.84
+17,2,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Święty Marcin,Kraków,09:51-14:25,83.94,68.49,77.13,60.52
+17,3,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Długa,Poznań,11:39-15:51,72.3,59.29,72.46,52.96
+17,4,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Kościuszki,Gdańsk,12:52-17:48,61.9,65.0,71.52,59.47
+17,5,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Lipowa,Łódź,09:13-13:54,46.29,36.55,41.17,32.52
+17,6,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Polna,Wrocław,08:24-13:24,59.91,58.14,64.33,53.25
+17,7,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Słoneczna,Katowice,08:00-12:45,25.63,21.99,24.33,19.48
+17,8,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Kwiatowa,Lublin,09:26-13:33,7.96,6.8,7.45,6.24
+17,9,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Krótka,Szczecin,13:54-18:00,38.85,42.17,54.43,39.43
+17,10,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Sportowa,Bydgoszcz,12:30-17:00,81.3,66.78,73.46,61.03
+17,11,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Szkolna,Warszawa,10:00-14:57,24.44,25.43,28.74,23.45
+17,12,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Leśna,Kraków,10:02-14:23,27.32,25.97,29.23,23.98
+17,13,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Ogrodowa,Poznań,12:26-17:09,11.17,8.58,9.32,7.56
+17,14,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Widokowa,Gdańsk,14:05-18:00,47.73,45.66,50.64,40.38
+17,15,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Spacerowa,Łódź,13:45-18:00,57.46,64.18,72.18,58.21
+17,16,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Floriańska,Wrocław,09:38-13:44,59.56,56.69,62.56,53.6
+17,18,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Długa,Lublin,11:47-16:11,31.35,29.12,37.41,25.79
+17,19,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Kościuszki,Szczecin,11:21-15:31,23.69,20.3,23.18,18.36
+17,20,PunktDostawy,PunktDostawy,Święty Marcin,Katowice,Lipowa,Bydgoszcz,14:40-18:00,56.8,47.96,53.52,42.52
+18,0,PunktDostawy,Magazyn,Długa,Lublin,Puławska,Warszawa,,92.09,85.51,93.71,80.47
+18,1,PunktDostawy,PunktDostawy,Długa,Lublin,Floriańska,Warszawa,09:04-13:59,33.41,33.85,36.6,30.64
+18,2,PunktDostawy,PunktDostawy,Długa,Lublin,Święty Marcin,Kraków,09:51-14:25,79.08,70.21,86.34,61.98
+18,3,PunktDostawy,PunktDostawy,Długa,Lublin,Długa,Poznań,11:39-15:51,67.59,58.41,65.07,52.32
+18,4,PunktDostawy,PunktDostawy,Długa,Lublin,Kościuszki,Gdańsk,12:52-17:48,29.97,25.57,27.72,22.55
+18,5,PunktDostawy,PunktDostawy,Długa,Lublin,Lipowa,Łódź,09:13-13:54,16.34,14.07,17.44,13.21
+18,6,PunktDostawy,PunktDostawy,Długa,Lublin,Polna,Wrocław,08:24-13:24,94.34,76.9,85.74,72.22
+18,7,PunktDostawy,PunktDostawy,Długa,Lublin,Słoneczna,Katowice,08:00-12:45,7.09,5.93,6.76,5.29
+18,8,PunktDostawy,PunktDostawy,Długa,Lublin,Kwiatowa,Lublin,09:26-13:33,24.19,26.3,28.69,24.62
+18,9,PunktDostawy,PunktDostawy,Długa,Lublin,Krótka,Szczecin,13:54-18:00,58.2,53.37,68.38,47.5
+18,10,PunktDostawy,PunktDostawy,Długa,Lublin,Sportowa,Bydgoszcz,12:30-17:00,77.93,79.51,102.75,73.72
+18,11,PunktDostawy,PunktDostawy,Długa,Lublin,Szkolna,Warszawa,10:00-14:57,44.38,44.81,57.32,41.75
+18,12,PunktDostawy,PunktDostawy,Długa,Lublin,Leśna,Kraków,10:02-14:23,55.04,49.46,63.42,46.52
+18,13,PunktDostawy,PunktDostawy,Długa,Lublin,Ogrodowa,Poznań,12:26-17:09,42.18,37.39,48.22,34.27
+18,14,PunktDostawy,PunktDostawy,Długa,Lublin,Widokowa,Gdańsk,14:05-18:00,15.99,16.38,18.77,15.35
+18,15,PunktDostawy,PunktDostawy,Długa,Lublin,Spacerowa,Łódź,13:45-18:00,48.72,49.36,59.85,46.39
+18,16,PunktDostawy,PunktDostawy,Długa,Lublin,Floriańska,Wrocław,09:38-13:44,81.29,74.35,83.05,65.51
+18,17,PunktDostawy,PunktDostawy,Długa,Lublin,Święty Marcin,Katowice,08:48-13:38,32.62,31.62,35.95,28.0
+18,19,PunktDostawy,PunktDostawy,Długa,Lublin,Kościuszki,Szczecin,11:21-15:31,56.47,57.12,63.51,50.5
+18,20,PunktDostawy,PunktDostawy,Długa,Lublin,Lipowa,Bydgoszcz,14:40-18:00,77.23,70.54,79.74,64.72
+19,0,PunktDostawy,Magazyn,Kościuszki,Szczecin,Puławska,Warszawa,,36.22,32.38,42.08,30.7
+19,1,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Floriańska,Warszawa,09:04-13:59,81.04,77.15,85.9,68.31
+19,2,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Święty Marcin,Kraków,09:51-14:25,95.97,79.24,90.4,71.15
+19,3,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Długa,Poznań,11:39-15:51,82.29,88.93,99.93,80.95
+19,4,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Kościuszki,Gdańsk,12:52-17:48,86.39,85.47,107.54,77.52
+19,5,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Lipowa,Łódź,09:13-13:54,67.45,58.01,65.36,51.52
+19,6,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Polna,Wrocław,08:24-13:24,39.89,38.44,42.07,36.49
+19,7,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Słoneczna,Katowice,08:00-12:45,48.37,39.89,45.3,37.29
+19,8,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Kwiatowa,Lublin,09:26-13:33,30.25,31.73,41.11,28.5
+19,9,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Krótka,Szczecin,13:54-18:00,38.47,35.24,43.41,32.77
+19,10,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Sportowa,Bydgoszcz,12:30-17:00,86.1,74.56,81.67,67.07
+19,11,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Szkolna,Warszawa,10:00-14:57,29.44,26.15,32.05,24.06
+19,12,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Leśna,Kraków,10:02-14:23,11.23,10.54,11.46,9.93
+19,13,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Ogrodowa,Poznań,12:26-17:09,12.77,11.36,12.34,10.37
+19,14,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Widokowa,Gdańsk,14:05-18:00,74.96,60.05,72.15,52.98
+19,15,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Spacerowa,Łódź,13:45-18:00,77.21,65.7,80.16,61.67
+19,16,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Floriańska,Wrocław,09:38-13:44,52.51,54.4,60.07,49.61
+19,17,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Święty Marcin,Katowice,08:48-13:38,22.88,18.66,20.88,16.61
+19,18,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Długa,Lublin,11:47-16:11,53.13,49.32,54.89,44.47
+19,20,PunktDostawy,PunktDostawy,Kościuszki,Szczecin,Lipowa,Bydgoszcz,14:40-18:00,56.79,46.59,50.75,41.74
+20,0,PunktDostawy,Magazyn,Lipowa,Bydgoszcz,Puławska,Warszawa,,62.7,48.9,53.64,44.74
+20,1,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Floriańska,Warszawa,09:04-13:59,82.93,83.34,91.25,74.59
+20,2,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Święty Marcin,Kraków,09:51-14:25,50.53,46.43,51.92,43.05
+20,3,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Długa,Poznań,11:39-15:51,51.34,50.62,54.83,44.99
+20,4,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Kościuszki,Gdańsk,12:52-17:48,93.72,84.7,93.51,78.79
+20,5,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Lipowa,Łódź,09:13-13:54,87.89,90.07,98.84,82.59
+20,6,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Polna,Wrocław,08:24-13:24,55.52,55.97,62.38,52.22
+20,7,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Słoneczna,Katowice,08:00-12:45,65.9,68.83,74.48,64.86
+20,8,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Kwiatowa,Lublin,09:26-13:33,57.0,63.04,79.31,56.61
+20,9,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Krótka,Szczecin,13:54-18:00,18.89,16.87,18.34,15.93
+20,10,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Sportowa,Bydgoszcz,12:30-17:00,51.93,46.57,57.4,41.23
+20,11,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Szkolna,Warszawa,10:00-14:57,34.13,30.77,34.57,28.9
+20,12,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Leśna,Kraków,10:02-14:23,42.67,36.52,47.15,33.19
+20,13,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Ogrodowa,Poznań,12:26-17:09,57.11,51.0,56.08,46.5
+20,14,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Widokowa,Gdańsk,14:05-18:00,86.56,88.2,101.19,80.14
+20,15,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Spacerowa,Łódź,13:45-18:00,57.13,60.16,68.61,55.35
+20,16,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Floriańska,Wrocław,09:38-13:44,6.72,5.76,6.54,5.32
+20,17,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Święty Marcin,Katowice,08:48-13:38,57.73,51.04,64.1,48.09
+20,18,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Długa,Lublin,11:47-16:11,75.2,65.91,83.41,62.02
+20,19,PunktDostawy,PunktDostawy,Lipowa,Bydgoszcz,Kościuszki,Szczecin,11:21-15:31,52.82,47.91,62.04,45.33

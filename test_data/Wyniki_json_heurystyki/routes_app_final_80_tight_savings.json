@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "dataset": "app_final_80_tight",
+  "dataset_size": null,
+  "window_profile": null,
+  "algorithm": "Savings",
+  "generated_at": "2025-11-08T16:05:14.569124+00:00",
+  "parameters": {
+    "day_horizon": 600,
+    "service_time": 0.0,
+    "cost_model": {
+      "cost_per_km": 1.0,
+      "vehicle_fixed_cost": 900.0,
+      "penalty_horizon_per_min": 120.0,
+      "time_weight": 1.0
+    }
+  },
+  "routes": [
+    [
+      0,
+      36,
+      66,
+      44,
+      53,
+      38,
+      0
+    ],
+    [
+      0,
+      26,
+      51,
+      8,
+      78,
+      46,
+      75,
+      69,
+      0
+    ],
+    [
+      0,
+      18,
+      50,
+      40,
+      45,
+      41,
+      59,
+      61,
+      0
+    ],
+    [
+      0,
+      4,
+      19,
+      32,
+      0
+    ],
+    [
+      0,
+      20,
+      28,
+      2,
+      72,
+      30,
+      71,
+      47,
+      0
+    ],
+    [
+      0,
+      13,
+      43,
+      54,
+      29,
+      37,
+      27,
+      1,
+      63,
+      0
+    ],
+    [
+      0,
+      21,
+      12,
+      11,
+      0
+    ],
+    [
+      0,
+      22,
+      55,
+      14,
+      3,
+      58,
+      67,
+      0
+    ],
+    [
+      0,
+      73,
+      5,
+      60,
+      7,
+      74,
+      39,
+      70,
+      0
+    ],
+    [
+      0,
+      6,
+      33,
+      62,
+      64,
+      76,
+      80,
+      9,
+      0
+    ],
+    [
+      0,
+      34,
+      25,
+      65,
+      0
+    ],
+    [
+      0,
+      48,
+      68,
+      10,
+      79,
+      42,
+      24,
+      49,
+      0
+    ],
+    [
+      0,
+      23,
+      16,
+      0
+    ],
+    [
+      0,
+      56,
+      15,
+      17,
+      31,
+      35,
+      52,
+      77,
+      57,
+      0
+    ]
+  ],
+  "metrics": {
+    "total_cost": 21220.25,
+    "vehicles_used": 14,
+    "total_distance_km": 2456.839999999999,
+    "waiting_total": 3964.2100000000005,
+    "lateness_P_sum": 0.0,
+    "horizon_excess_E": 0.0,
+    "vehicle_cost": 12600.0,
+    "cost_distance": 2456.839999999999,
+    "cost_penalty_late": 0.0,
+    "cost_penalty_horizon": 0.0,
+    "makespan_E": 561.33,
+    "sum_route_time_E": 6163.410000000001,
+    "avg_route_time_E": 440.2435714285715,
+    "total_service_time": 0.0,
+    "cost_time": 6163.410000000001
+  }
+}
